@@ -23,7 +23,6 @@ class PostCell: UITableViewCell {
     var users: Users!
     var request: Request?
     var likeRef: Firebase!
-    var userPostRef: Firebase!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,7 +45,6 @@ class PostCell: UITableViewCell {
         self.post = post
         
         likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
-        userPostRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("posts").childByAppendingPath(post.postKey)
         
         self.descriptionText.text = post.postDescription
         self.likesLbl.text = "\(post.likes)"
@@ -79,17 +77,7 @@ class PostCell: UITableViewCell {
                 self.likeImg.image = UIImage(named: "heart-full")
             }
         })
-        
-        userPostRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
-            print("THIS IS SNAPSHOT VALUE IN CONFIGCELL: \(snapshot.value)")
-            if let doesNotExist = snapshot.value as? NSNull {
-                self.userNameLbl.text = "NULL"
-                self.userPostRef.setValue(true)
-            } else {
-                self.userPostRef.setValue(true)
-            }
-        })
-        
+                
 //        let userNameRef = DataService.ds.REF_USERS.childByAppendingPath("username")
 //        userNameRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
 //            print(snapshot.value)

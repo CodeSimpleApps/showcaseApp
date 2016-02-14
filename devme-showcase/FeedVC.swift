@@ -137,6 +137,13 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                                             print("LINK: \(imgLink)")
                                             
                                             self.postToFirebase(imgLink)
+                                            
+                                            DataService.ds.REF_POSTS.observeSingleEventOfType(.ChildAdded, withBlock: { snapshot in
+                                                    if let key = snapshot.key {
+                                                    self.postToUser(key)
+                                                }
+                                            })
+
                                         }
                                     }
                                 }
@@ -154,7 +161,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     }
     
     func postToFirebase(imgUrl: String?) {
-                
+        
         var post: Dictionary <String, AnyObject> = [
             "description": postField.text!,
             "likes": 0,
@@ -174,6 +181,18 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         imageSelected = false
         
         tableView.reloadData()
+    }
+    
+    func postToUser(postKey: String) {
+        
+        let userPostRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("posts").childByAppendingPath(postKey)
+        
+        userPostRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            print("THIS IS SNAPSHOT VALUE IN CONFIGCELL: \(snapshot.value)")
+            if let doesNotExist = snapshot.value as? NSNull {
+                userPostRef.setValue(true)
+            }
+        })
     }
     
     @IBAction func logOutBtnPressed(sender: AnyObject) {
