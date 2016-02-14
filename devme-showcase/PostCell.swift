@@ -20,9 +20,9 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var userNameLbl: UILabel!
     
     var post: Post!
-    var users: Users!
     var request: Request?
     var likeRef: Firebase!
+    var userPostRef: Firebase!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,9 +45,11 @@ class PostCell: UITableViewCell {
         self.post = post
         
         likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
+//        userPostRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("posts").childByAppendingPath(post.postKey)
         
         self.descriptionText.text = post.postDescription
         self.likesLbl.text = "\(post.likes)"
+        self.userNameLbl.text = post.userName
         
         if post.imageUrl != nil {
             if img != nil {
@@ -77,16 +79,15 @@ class PostCell: UITableViewCell {
                 self.likeImg.image = UIImage(named: "heart-full")
             }
         })
-                
-//        let userNameRef = DataService.ds.REF_USERS.childByAppendingPath("username")
-//        userNameRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
-//            print(snapshot.value)
+
+//        userPostRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
 //            if let userName = snapshot.value as? String {
-//                self.userNameLbl.text = userName
-//                print("THIS IS USERNAME \(userName)")
+//                
+//                print(userName)
+////                post.userName = userName
+////                self.userNameLbl.text = post.userName
 //            }
 //        })
-
     }
     
     func likeTapped(sender: UITapGestureRecognizer) {

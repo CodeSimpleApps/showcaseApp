@@ -32,11 +32,13 @@ class Post {
     }
     
     var userName: String {
-        if _userName == nil {
-            _userName = "NO NAME"
+        get {
+            return _userName
         }
         
-        return _userName
+        set {
+            _userName = newValue
+        }
     }
     
     var postKey: String {

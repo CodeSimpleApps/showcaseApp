@@ -21,6 +21,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     var imagePicker: UIImagePickerController!
     var posts = [Post]()
     var imageSelected = false
+    var currentUser = ""
     
     static var imageCache = NSCache()
 
@@ -48,12 +49,19 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                         let key = snap.key
                         let post = Post(postKey: key, dictionary: postDict)
                         
-                        self.posts.append(post)
+                        self.posts.insert(post, atIndex: 0)
                     }
                 }
             }
             
             self.tableView.reloadData()
+        })
+        
+        DataService.ds.REF_USER_CURRENT.observeEventType(.Value, withBlock: { snapshot in
+            let currentUser = snapshot.value.objectForKey("username") as? String
+            
+            print("CURRENT USER IN FEED VC: \(currentUser)")
+            self.currentUser = currentUser!
         })
     }
     
@@ -165,7 +173,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         var post: Dictionary <String, AnyObject> = [
             "description": postField.text!,
             "likes": 0,
-            "username": "EMPTY NAME"
+            "username": currentUser
         ]
         
         if imgUrl != nil {
@@ -200,7 +208,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
         
-        DataService.ds.REF_USER_CURRENT.childByAppendingPath(KEY_UID).unauth()
+        DataService.ds.REF_USER_CURRENT.unauth()
         
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: KEY_UID)
         
