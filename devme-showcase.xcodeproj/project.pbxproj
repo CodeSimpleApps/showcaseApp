@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06013CE41C57D05B002325E0 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06013CE31C57D05B002325E0 /* PostCell.swift */; };
+		060E0D751C691BBD00F24368 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E0D741C691BBD00F24368 /* Users.swift */; };
+		063415C71C5BBAD6008B73A7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063415C61C5BBAD6008B73A7 /* Post.swift */; };
 		0674AAF81C53FBAD002A7E4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AAF71C53FBAD002A7E4F /* AppDelegate.swift */; };
 		0674AAFA1C53FBAD002A7E4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AAF91C53FBAD002A7E4F /* ViewController.swift */; };
 		0674AAFD1C53FBAD002A7E4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0674AAFB1C53FBAD002A7E4F /* Main.storyboard */; };
@@ -14,6 +17,20 @@
 		0674AB021C53FBAD002A7E4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0674AB001C53FBAD002A7E4F /* LaunchScreen.storyboard */; };
 		0674AB0D1C53FBAD002A7E4F /* devme_showcaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AB0C1C53FBAD002A7E4F /* devme_showcaseTests.swift */; };
 		0674AB181C53FBAD002A7E4F /* devme_showcaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AB171C53FBAD002A7E4F /* devme_showcaseUITests.swift */; };
+		0674AB321C53FC94002A7E4F /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0674AB2E1C53FC94002A7E4F /* NotoSans-Bold.ttf */; };
+		0674AB331C53FC94002A7E4F /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0674AB2F1C53FC94002A7E4F /* NotoSans-BoldItalic.ttf */; };
+		0674AB341C53FC94002A7E4F /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0674AB301C53FC94002A7E4F /* NotoSans-Italic.ttf */; };
+		0674AB351C53FC94002A7E4F /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0674AB311C53FC94002A7E4F /* NotoSans-Regular.ttf */; };
+		0674AB371C53FF22002A7E4F /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AB361C53FF22002A7E4F /* MaterialView.swift */; };
+		0674AB3A1C53FF92002A7E4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AB391C53FF92002A7E4F /* Constants.swift */; };
+		0674AB3C1C5403DF002A7E4F /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AB3B1C5403DF002A7E4F /* MaterialButton.swift */; };
+		0674AB3E1C5406AF002A7E4F /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AB3D1C5406AF002A7E4F /* MaterialTextField.swift */; };
+		068E37DA1C54D05A003608A6 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068E37D71C54D05A003608A6 /* Bolts.framework */; };
+		068E37DB1C54D05A003608A6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068E37D81C54D05A003608A6 /* FBSDKCoreKit.framework */; };
+		068E37DC1C54D05A003608A6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068E37D91C54D05A003608A6 /* FBSDKLoginKit.framework */; };
+		06C611611C57CE8600A2573F /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C611601C57CE8600A2573F /* FeedVC.swift */; };
+		06CB88791C56760E008534A5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB88781C56760E008534A5 /* DataService.swift */; };
+		D0EDAAEA74217AC9103C2DDF /* Pods_devme_showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C1998D7A8DE838D9C887A3 /* Pods_devme_showcase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06013CE31C57D05B002325E0 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		060E0D741C691BBD00F24368 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		063415C61C5BBAD6008B73A7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0674AAF41C53FBAD002A7E4F /* devme-showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "devme-showcase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0674AAF71C53FBAD002A7E4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0674AAF91C53FBAD002A7E4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +67,22 @@
 		0674AB131C53FBAD002A7E4F /* devme-showcaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "devme-showcaseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0674AB171C53FBAD002A7E4F /* devme_showcaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = devme_showcaseUITests.swift; sourceTree = "<group>"; };
 		0674AB191C53FBAD002A7E4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0674AB2E1C53FC94002A7E4F /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		0674AB2F1C53FC94002A7E4F /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		0674AB301C53FC94002A7E4F /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
+		0674AB311C53FC94002A7E4F /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		0674AB361C53FF22002A7E4F /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		0674AB391C53FF92002A7E4F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0674AB3B1C5403DF002A7E4F /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		0674AB3D1C5406AF002A7E4F /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		068E37D71C54D05A003608A6 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		068E37D81C54D05A003608A6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		068E37D91C54D05A003608A6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		06C611601C57CE8600A2573F /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		06CB88781C56760E008534A5 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		65368A7E4EA759980853D8D8 /* Pods-devme-showcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devme-showcase.release.xcconfig"; path = "Pods/Target Support Files/Pods-devme-showcase/Pods-devme-showcase.release.xcconfig"; sourceTree = "<group>"; };
+		B89F4E9C2038365C5F927004 /* Pods-devme-showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devme-showcase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-devme-showcase/Pods-devme-showcase.debug.xcconfig"; sourceTree = "<group>"; };
+		D8C1998D7A8DE838D9C887A3 /* Pods_devme_showcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devme_showcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +90,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				068E37DA1C54D05A003608A6 /* Bolts.framework in Frameworks */,
+				068E37DB1C54D05A003608A6 /* FBSDKCoreKit.framework in Frameworks */,
+				068E37DC1C54D05A003608A6 /* FBSDKLoginKit.framework in Frameworks */,
+				D0EDAAEA74217AC9103C2DDF /* Pods_devme_showcase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +121,8 @@
 				0674AB0B1C53FBAD002A7E4F /* devme-showcaseTests */,
 				0674AB161C53FBAD002A7E4F /* devme-showcaseUITests */,
 				0674AAF51C53FBAD002A7E4F /* Products */,
+				BDE418335E1A8C38E6A7DE39 /* Pods */,
+				F1678EB4831F54170B788216 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,11 +139,15 @@
 		0674AAF61C53FBAD002A7E4F /* devme-showcase */ = {
 			isa = PBXGroup;
 			children = (
+				06CB88771C5675EC008534A5 /* Services */,
+				068E37D61C54D000003608A6 /* Frameworks */,
+				0674AB381C53FF7C002A7E4F /* Util */,
+				0674AB281C53FBF3002A7E4F /* Resources */,
+				0674AB271C53FBE9002A7E4F /* Model */,
+				0674AB261C53FBDF002A7E4F /* View */,
+				0674AB251C53FBD8002A7E4F /* Controller */,
 				0674AAF71C53FBAD002A7E4F /* AppDelegate.swift */,
-				0674AAF91C53FBAD002A7E4F /* ViewController.swift */,
-				0674AAFB1C53FBAD002A7E4F /* Main.storyboard */,
 				0674AAFE1C53FBAD002A7E4F /* Assets.xcassets */,
-				0674AB001C53FBAD002A7E4F /* LaunchScreen.storyboard */,
 				0674AB031C53FBAD002A7E4F /* Info.plist */,
 			);
 			path = "devme-showcase";
@@ -125,6 +171,91 @@
 			path = "devme-showcaseUITests";
 			sourceTree = "<group>";
 		};
+		0674AB251C53FBD8002A7E4F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0674AAF91C53FBAD002A7E4F /* ViewController.swift */,
+				06C611601C57CE8600A2573F /* FeedVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0674AB261C53FBDF002A7E4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0674AAFB1C53FBAD002A7E4F /* Main.storyboard */,
+				0674AB001C53FBAD002A7E4F /* LaunchScreen.storyboard */,
+				0674AB361C53FF22002A7E4F /* MaterialView.swift */,
+				0674AB3B1C5403DF002A7E4F /* MaterialButton.swift */,
+				0674AB3D1C5406AF002A7E4F /* MaterialTextField.swift */,
+				06013CE31C57D05B002325E0 /* PostCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		0674AB271C53FBE9002A7E4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				063415C61C5BBAD6008B73A7 /* Post.swift */,
+				060E0D741C691BBD00F24368 /* Users.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0674AB281C53FBF3002A7E4F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0674AB2E1C53FC94002A7E4F /* NotoSans-Bold.ttf */,
+				0674AB2F1C53FC94002A7E4F /* NotoSans-BoldItalic.ttf */,
+				0674AB301C53FC94002A7E4F /* NotoSans-Italic.ttf */,
+				0674AB311C53FC94002A7E4F /* NotoSans-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0674AB381C53FF7C002A7E4F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0674AB391C53FF92002A7E4F /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		068E37D61C54D000003608A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				068E37D71C54D05A003608A6 /* Bolts.framework */,
+				068E37D81C54D05A003608A6 /* FBSDKCoreKit.framework */,
+				068E37D91C54D05A003608A6 /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		06CB88771C5675EC008534A5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				06CB88781C56760E008534A5 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		BDE418335E1A8C38E6A7DE39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B89F4E9C2038365C5F927004 /* Pods-devme-showcase.debug.xcconfig */,
+				65368A7E4EA759980853D8D8 /* Pods-devme-showcase.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F1678EB4831F54170B788216 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8C1998D7A8DE838D9C887A3 /* Pods_devme_showcase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0674AB1C1C53FBAD002A7E4F /* Build configuration list for PBXNativeTarget "devme-showcase" */;
 			buildPhases = (
+				A2264D776335EE9E0A569749 /* Check Pods Manifest.lock */,
 				0674AAF01C53FBAD002A7E4F /* Sources */,
 				0674AAF11C53FBAD002A7E4F /* Frameworks */,
 				0674AAF21C53FBAD002A7E4F /* Resources */,
+				3313620F470F9C8D0FC31402 /* Embed Pods Frameworks */,
+				879F350A8FF0E625BB983DCC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,9 +366,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0674AB321C53FC94002A7E4F /* NotoSans-Bold.ttf in Resources */,
 				0674AB021C53FBAD002A7E4F /* LaunchScreen.storyboard in Resources */,
+				0674AB331C53FC94002A7E4F /* NotoSans-BoldItalic.ttf in Resources */,
+				0674AB341C53FC94002A7E4F /* NotoSans-Italic.ttf in Resources */,
 				0674AAFF1C53FBAD002A7E4F /* Assets.xcassets in Resources */,
 				0674AAFD1C53FBAD002A7E4F /* Main.storyboard in Resources */,
+				0674AB351C53FC94002A7E4F /* NotoSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,13 +392,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3313620F470F9C8D0FC31402 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-devme-showcase/Pods-devme-showcase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		879F350A8FF0E625BB983DCC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-devme-showcase/Pods-devme-showcase-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2264D776335EE9E0A569749 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0674AAF01C53FBAD002A7E4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0674AB3E1C5406AF002A7E4F /* MaterialTextField.swift in Sources */,
+				06CB88791C56760E008534A5 /* DataService.swift in Sources */,
+				0674AB371C53FF22002A7E4F /* MaterialView.swift in Sources */,
 				0674AAFA1C53FBAD002A7E4F /* ViewController.swift in Sources */,
+				06C611611C57CE8600A2573F /* FeedVC.swift in Sources */,
+				06013CE41C57D05B002325E0 /* PostCell.swift in Sources */,
 				0674AAF81C53FBAD002A7E4F /* AppDelegate.swift in Sources */,
+				0674AB3A1C53FF92002A7E4F /* Constants.swift in Sources */,
+				0674AB3C1C5403DF002A7E4F /* MaterialButton.swift in Sources */,
+				063415C71C5BBAD6008B73A7 /* Post.swift in Sources */,
+				060E0D751C691BBD00F24368 /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,8 +595,14 @@
 		};
 		0674AB1D1C53FBAD002A7E4F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B89F4E9C2038365C5F927004 /* Pods-devme-showcase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/devme-showcase",
+				);
 				INFOPLIST_FILE = "devme-showcase/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "self.devme-showcase";
@@ -411,8 +612,14 @@
 		};
 		0674AB1E1C53FBAD002A7E4F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65368A7E4EA759980853D8D8 /* Pods-devme-showcase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/devme-showcase",
+				);
 				INFOPLIST_FILE = "devme-showcase/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "self.devme-showcase";
@@ -487,6 +694,7 @@
 				0674AB1E1C53FBAD002A7E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0674AB1F1C53FBAD002A7E4F /* Build configuration list for PBXNativeTarget "devme-showcaseTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +703,7 @@
 				0674AB211C53FBAD002A7E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0674AB221C53FBAD002A7E4F /* Build configuration list for PBXNativeTarget "devme-showcaseUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +712,7 @@
 				0674AB241C53FBAD002A7E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
