@@ -32,13 +32,7 @@ class Post {
     }
     
     var userName: String {
-        get {
-            return _userName
-        }
-        
-        set {
-            _userName = newValue
-        }
+        return _userName
     }
     
     var postKey: String {

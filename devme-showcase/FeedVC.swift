@@ -49,7 +49,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                         let key = snap.key
                         let post = Post(postKey: key, dictionary: postDict)
                         
-                        self.posts.insert(post, atIndex: 0)
+                        self.posts.append(post)
                     }
                 }
             }
@@ -205,17 +205,17 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     
     @IBAction func logOutBtnPressed(sender: AnyObject) {
         
-        let loginManager = FBSDKLoginManager()
-        loginManager.logOut()
-        
-        DataService.ds.REF_USER_CURRENT.unauth()
-        
-        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: KEY_UID)
-        
-        let loginPage = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
-        self.presentViewController(loginPage, animated: true, completion: nil)
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.window?.rootViewController = loginPage
+//        let loginManager = FBSDKLoginManager()
+//        loginManager.logOut()
+//        
+//        DataService.ds.REF_USER_CURRENT.unauth()
+//        
+//        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: KEY_UID)
+//        
+//        let loginPage = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+//        self.presentViewController(loginPage, animated: true, completion: nil)
+//        
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        appDelegate.window?.rootViewController = loginPage
     }
 }

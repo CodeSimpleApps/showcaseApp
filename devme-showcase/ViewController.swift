@@ -79,7 +79,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     
                     if error.code == STATUS_ACCOUNT_NONEXIST {
                         
-                        self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+//                        self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                         
                         DataService.ds.REF_BASE.createUser(email, password: pwd, withValueCompletionBlock: { error, result in
                             if error != nil {
@@ -123,7 +123,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 //                                            
 //                                    }
                                 
-                                NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
                                 DataService.ds.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { err, authData in
                                     
                                     if err != nil {
@@ -137,6 +136,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                         DataService.ds.createFirebaseUser(authData.uid, user: user)
                                     }
                                 })
+                                
+                                NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
                                 
                                 self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                             }
