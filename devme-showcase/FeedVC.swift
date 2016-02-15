@@ -204,18 +204,10 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     }
     
     @IBAction func logOutBtnPressed(sender: AnyObject) {
+        DataService.ds.REF_USER_CURRENT.unauth()
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: KEY_UID)
         
-//        let loginManager = FBSDKLoginManager()
-//        loginManager.logOut()
-//        
-//        DataService.ds.REF_USER_CURRENT.unauth()
-//        
-//        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: KEY_UID)
-//        
-//        let loginPage = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
-//        self.presentViewController(loginPage, animated: true, completion: nil)
-//        
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        appDelegate.window?.rootViewController = loginPage
+        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController")
+        UIApplication.sharedApplication().keyWindow?.rootViewController = loginVC
     }
 }

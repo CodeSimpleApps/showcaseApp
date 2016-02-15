@@ -16,6 +16,7 @@
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
+            <string>NotoSans-Bold</string>
         </mutableArray>
         <mutableArray key="NotoSans-Regular.ttf">
             <string>NotoSans</string>
@@ -105,7 +106,7 @@
                                 <rect key="frame" x="20" y="215" width="560" height="365"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Login / Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYJ-5c-E3F">
-                                        <rect key="frame" x="20" y="20" width="179" height="24"/>
+                                        <rect key="frame" x="20" y="8" width="179" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="YiB-u2-fbe"/>
                                             <constraint firstAttribute="width" constant="179" id="gb6-6c-J8L"/>
@@ -115,7 +116,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Adress" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tpo-b7-gUg" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="52" width="520" height="35"/>
+                                        <rect key="frame" x="20" y="40" width="520" height="35"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="EBM-3y-QKK"/>
@@ -125,7 +126,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apJ-MX-dD8" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="107" width="520" height="35"/>
+                                        <rect key="frame" x="20" y="83" width="520" height="35"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="Qdz-Qa-hj2"/>
@@ -142,15 +143,30 @@
                                             <constraint firstAttribute="width" constant="173" id="cnt-np-hnA"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
-                                        <state key="normal" title="Login / Sign Up">
+                                        <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="attemptLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JnE-Xe-eg5"/>
+                                            <action selector="attemptSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wea-Dr-0KL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayU-f3-GfT" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
+                                        <rect key="frame" x="194" y="126" width="173" height="33"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="173" id="1kZ-TR-hdw"/>
+                                            <constraint firstAttribute="height" constant="33" id="OSx-wB-r1f"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="attemptLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cud-yp-LC8"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-Bq-EGb">
-                                        <rect key="frame" x="20" y="150" width="179" height="24"/>
+                                        <rect key="frame" x="20" y="167" width="179" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="179" id="Anw-pm-bPF"/>
                                             <constraint firstAttribute="height" constant="24" id="i2P-FQ-nWr"/>
@@ -160,7 +176,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOD-dr-UtI" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="182" width="520" height="35"/>
+                                        <rect key="frame" x="20" y="199" width="520" height="35"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="slX-lU-WoG"/>
@@ -170,7 +186,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="VJo-nd-XnJ">
-                                        <rect key="frame" x="490" y="225" width="50" height="50"/>
+                                        <rect key="frame" x="490" y="242" width="50" height="50"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="AL9-dE-ptp"/>
@@ -181,7 +197,7 @@
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a profile pick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2n-wr-hQE">
-                                        <rect key="frame" x="20" y="238" width="179" height="24"/>
+                                        <rect key="frame" x="20" y="255" width="179" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="179" id="9pM-pU-GSU"/>
                                             <constraint firstAttribute="height" constant="24" id="kpt-kB-wrF"/>
@@ -195,24 +211,26 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="BOD-dr-UtI" secondAttribute="trailing" constant="20" id="1Ng-Zo-7HU"/>
                                     <constraint firstItem="vYJ-5c-E3F" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="5cb-4J-78g"/>
-                                    <constraint firstItem="apJ-MX-dD8" firstAttribute="top" secondItem="Tpo-b7-gUg" secondAttribute="bottom" constant="20" id="6UF-eN-drm"/>
+                                    <constraint firstItem="apJ-MX-dD8" firstAttribute="top" secondItem="Tpo-b7-gUg" secondAttribute="bottom" constant="8" id="6UF-eN-drm"/>
                                     <constraint firstItem="BOD-dr-UtI" firstAttribute="top" secondItem="eYG-Bq-EGb" secondAttribute="bottom" constant="8" id="9Xt-Cw-6gt"/>
                                     <constraint firstAttribute="trailing" secondItem="Tpo-b7-gUg" secondAttribute="trailing" constant="20" id="9zW-ND-owT"/>
                                     <constraint firstItem="apJ-MX-dD8" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="D6t-vf-MsB"/>
                                     <constraint firstItem="VJo-nd-XnJ" firstAttribute="top" secondItem="BOD-dr-UtI" secondAttribute="bottom" constant="8" id="H1F-CR-ipx"/>
                                     <constraint firstAttribute="trailing" secondItem="apJ-MX-dD8" secondAttribute="trailing" constant="20" id="JgH-QN-mkT"/>
                                     <constraint firstItem="w2n-wr-hQE" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="TBb-bj-Tik"/>
+                                    <constraint firstItem="ayU-f3-GfT" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="aDd-6U-yLP"/>
                                     <constraint firstItem="1ol-Ub-izu" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="coE-Zj-Gk5"/>
+                                    <constraint firstItem="eYG-Bq-EGb" firstAttribute="top" secondItem="ayU-f3-GfT" secondAttribute="bottom" constant="8" id="e0S-ax-rh8"/>
                                     <constraint firstItem="eYG-Bq-EGb" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="e74-5E-pNO"/>
                                     <constraint firstAttribute="height" constant="128" id="eZr-Ce-d9p"/>
+                                    <constraint firstItem="ayU-f3-GfT" firstAttribute="top" secondItem="apJ-MX-dD8" secondAttribute="bottom" constant="8" id="ez7-jb-3RU"/>
                                     <constraint firstAttribute="bottom" secondItem="1ol-Ub-izu" secondAttribute="bottom" constant="8" id="frg-Ip-TED"/>
                                     <constraint firstItem="Tpo-b7-gUg" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="hYR-5k-5io"/>
                                     <constraint firstItem="BOD-dr-UtI" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="qT8-6i-wZg"/>
                                     <constraint firstItem="w2n-wr-hQE" firstAttribute="top" secondItem="BOD-dr-UtI" secondAttribute="bottom" constant="21" id="uYc-5G-Nbp"/>
                                     <constraint firstItem="Tpo-b7-gUg" firstAttribute="top" secondItem="vYJ-5c-E3F" secondAttribute="bottom" constant="8" id="wB8-1x-qPl"/>
-                                    <constraint firstItem="vYJ-5c-E3F" firstAttribute="top" secondItem="cnW-aX-c3g" secondAttribute="top" constant="20" id="x5y-Jy-uu2"/>
+                                    <constraint firstItem="vYJ-5c-E3F" firstAttribute="top" secondItem="cnW-aX-c3g" secondAttribute="top" constant="8" id="x5y-Jy-uu2"/>
                                     <constraint firstAttribute="trailing" secondItem="VJo-nd-XnJ" secondAttribute="trailing" constant="20" id="xfz-5M-VqU"/>
-                                    <constraint firstItem="eYG-Bq-EGb" firstAttribute="top" secondItem="apJ-MX-dD8" secondAttribute="bottom" constant="8" id="zdy-lg-ESP"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">

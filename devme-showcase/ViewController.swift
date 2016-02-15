@@ -69,88 +69,47 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBAction func attemptLogin(sender: UIButton) {
         
-        if let email = emailField.text where email != "", let pwd = passwordField.text where pwd != "", let nick = nickNameField.text where nick != "" { // ADD ", let img = userImg.image where imageSelected == true" TO THE END TO MAKE IMAGE REQUIRED
-            
-//            var userImageUrl: String!
-
+        if let email = emailField.text where email != "", let pwd = passwordField.text where pwd != "" {
             DataService.ds.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { error, authData in
                 if error != nil {
-                    print(error.code)
+                    print(error.debugDescription)
+                    self.showErrorAlert("Oops!", msg: "Can't do this!")
                     
-                    if error.code == STATUS_ACCOUNT_NONEXIST {
-                        
-//                        self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                        
-                        DataService.ds.REF_BASE.createUser(email, password: pwd, withValueCompletionBlock: { error, result in
-                            if error != nil {
-                                self.showErrorAlert("Couldn't crate account!", msg: "Problem creating account. Try something else!")
-                                
-                            } else {
-                                
-//                                    let urlStr = "https://post.imageshack.us/upload_api.php"
-//                                    let url = NSURL(string: urlStr)!
-//                                    let imgData = UIImageJPEGRepresentation(img, 0.2)!
-//                                    let keyData = "PBFWVIAZ277b6635215df5b854e4cee43b000930".dataUsingEncoding(NSUTF8StringEncoding)!
-//                                    let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
-//                                    
-//                                    Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in
-//                                        
-//                                        multipartFormData.appendBodyPart(data: imgData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
-//                                        multipartFormData.appendBodyPart(data: keyData, name: "key")
-//                                        multipartFormData.appendBodyPart(data: keyJSON, name: "format")
-//                                        
-//                                        }) { encodingResult in
-//                                            
-//                                            switch encodingResult {
-//                                                
-//                                            case .Success(let upload, _, _):
-//                                                upload.responseJSON(completionHandler: { response in
-//                                                    if let info = response.result.value as? Dictionary <String, AnyObject> {
-//                                                        if let links = info["links"] as? Dictionary <String, AnyObject> {
-//                                                            if let imgLink = links["image_link"] as? String {
-//                                                                print("LINK: \(imgLink)")
-//                                                                
-//                                                                print(imgLink)
-////                                                                userImageUrl = imgLink
-//                                                            }
-//                                                        }
-//                                                    }
-//                                                })
-//                                                
-//                                            case .Failure(let error):
-//                                                print(error)
-//                                            }
-//                                            
-//                                    }
-                                
-                                DataService.ds.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { err, authData in
-                                    
-                                    if err != nil {
-                                        self.showErrorAlert("Couldn't crate account!", msg: "Problem creating account. Try something else!")
-                                    
-                                    } else {
-                                        
-                                        //ADD USERIMAGE DICTIONARY WHEN PROBLEM WITH NIL WILL BE SLOVED!!!
-                                        
-                                        let user = ["provider": authData.provider!, "username": nick]
-                                        DataService.ds.createFirebaseUser(authData.uid, user: user)
-                                    }
-                                })
-                                
-                                NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
-                                
-                                self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                            }
-                        })
-                        
-                    } else {
-                        self.showErrorAlert("Could not login", msg: "Please check your username or password!")
-                    }
+                } else {
+                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                 }
             })
             
         } else {
-            showErrorAlert("Email, Password and Nickname required", msg: "You must enter an email, password and Nickname")
+            self.showErrorAlert("Oops!", msg: "Forgot email or password?")
+        }
+    }
+    
+    @IBAction func attemptSignUp(sender: AnyObject) {
+        if let email = emailField.text where email != "", let pwd = passwordField.text where pwd != "", let nick = nickNameField.text where nick != "" {
+            DataService.ds.REF_BASE.createUser(email, password: pwd, withValueCompletionBlock: { error, result in
+                if error != nil {
+                    self.showErrorAlert("Oops!", msg: "Can't do this!")
+                    
+                } else {
+                    DataService.ds.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { err, authData in
+                        if err != nil {
+                            print(err)
+                            
+                        } else {
+                            let user = ["provider": authData.provider!, "username": nick]
+                            DataService.ds.createFirebaseUser(authData.uid, user: user)
+                        }
+                    })
+                    
+                    NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
+                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                }
+            })
+            
+        } else {
+            self.showErrorAlert("Oops!", msg: "Can't do this!")
         }
     }
     
