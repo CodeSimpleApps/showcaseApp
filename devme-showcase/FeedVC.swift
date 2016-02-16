@@ -22,6 +22,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     var posts = [Post]()
     var imageSelected = false
     var currentUser = ""
+    var userPostRef: Firebase!
     
     static var imageCache = NSCache()
 
@@ -49,7 +50,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                         let key = snap.key
                         let post = Post(postKey: key, dictionary: postDict)
                         
-                        self.posts.append(post)
+                        self.posts.insert(post, atIndex: 0)
                     }
                 }
             }
@@ -146,12 +147,11 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                                             
                                             self.postToFirebase(imgLink)
                                             
-                                            DataService.ds.REF_POSTS.observeSingleEventOfType(.ChildAdded, withBlock: { snapshot in
+                                            DataService.ds.REF_POSTS.observeEventType(.ChildAdded, withBlock: { snapshot in
                                                     if let key = snapshot.key {
                                                     self.postToUser(key)
                                                 }
                                             })
-
                                         }
                                     }
                                 }
@@ -193,12 +193,12 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     
     func postToUser(postKey: String) {
         
-        let userPostRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("posts").childByAppendingPath(postKey)
+        userPostRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("posts").childByAppendingPath(postKey)
         
         userPostRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
             print("THIS IS SNAPSHOT VALUE IN CONFIGCELL: \(snapshot.value)")
             if let doesNotExist = snapshot.value as? NSNull {
-                userPostRef.setValue(true)
+                self.userPostRef.setValue(true)
             }
         })
     }
