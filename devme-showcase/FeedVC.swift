@@ -58,12 +58,13 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
             self.tableView.reloadData()
         })
         
-        DataService.ds.REF_USER_CURRENT.observeEventType(.Value, withBlock: { snapshot in
-            let currentUser = snapshot.value.objectForKey("username") as? String
-            
-            print("CURRENT USER IN FEED VC: \(currentUser)")
-            self.currentUser = currentUser!
-        })
+        //HAVE CRASH ON SIGNUP NEW USER FOR SOME REASON IN APPDELEGATE
+//        DataService.ds.REF_USER_CURRENT.observeEventType(.Value, withBlock: { snapshot in
+//            let currentUser = snapshot.value.objectForKey("username") as? String
+//            
+//            print("CURRENT USER IN FEED VC: \(currentUser)")
+//            self.currentUser = currentUser!
+//        })
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -206,8 +207,10 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     @IBAction func logOutBtnPressed(sender: AnyObject) {
         DataService.ds.REF_USER_CURRENT.unauth()
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: KEY_UID)
+
+        self.dismissViewControllerAnimated(true, completion: nil)
         
-        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController")
-        UIApplication.sharedApplication().keyWindow?.rootViewController = loginVC
+//        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController")
+//        UIApplication.sharedApplication().keyWindow?.rootViewController = loginVC
     }
 }

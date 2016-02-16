@@ -87,7 +87,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func attemptSignUp(sender: AnyObject) {
-        if let email = emailField.text where email != "", let pwd = passwordField.text where pwd != "", let nick = nickNameField.text where nick != "" {
+        if let email = emailField.text where email != "", let pwd = passwordField.text where pwd != "", let nick = nickNameField.text where nick != "", let profImg = userImg.image where imageSelected == true {
+            
+            var userImgUrl: String!
+            
             DataService.ds.REF_BASE.createUser(email, password: pwd, withValueCompletionBlock: { error, result in
                 if error != nil {
                     self.showErrorAlert("Oops!", msg: "Can't do this!")
@@ -98,6 +101,46 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                             print(err)
                             
                         } else {
+                            
+                            let urlStr = "https://post.imageshack.us/upload_api.php"
+                            let url = NSURL(string: urlStr)!
+                            let imgData = UIImageJPEGRepresentation(profImg, 0.2)!
+                            let keyData = "PBFWVIAZ277b6635215df5b854e4cee43b000930".dataUsingEncoding(NSUTF8StringEncoding)!
+                            let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
+                            
+                            Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in
+                                
+                                multipartFormData.appendBodyPart(data: imgData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
+                                multipartFormData.appendBodyPart(data: keyData, name: "key")
+                                multipartFormData.appendBodyPart(data: keyJSON, name: "format")
+                                
+                                }) { encodingResult in
+                                    
+                                    switch encodingResult {
+                                        
+                                    case .Success(let upload, _, _):
+                                        upload.responseJSON(completionHandler: { response in
+                                            if let info = response.result.value as? Dictionary <String, AnyObject> {
+                                                if let links = info["links"] as? Dictionary <String, AnyObject> {
+                                                    if let imgLink = links["image_link"] as? String {
+                                                        print("PROF IMG LINK: \(imgLink)")
+                                                        
+//                                                        if imgLink.isEmpty {
+//                                                            userImgUrl = "IS EMPTY"
+//                                                            
+//                                                        } else {
+//                                                            userImgUrl = imgLink
+//                                                        }
+                                                    }
+                                                }
+                                            }
+                                        })
+                                        
+                                    case .Failure(let error):
+                                        print(error)
+                                    }
+                            }
+                            
                             let user = ["provider": authData.provider!, "username": nick]
                             DataService.ds.createFirebaseUser(authData.uid, user: user)
                         }
