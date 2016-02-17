@@ -22,7 +22,6 @@ class PostCell: UITableViewCell {
     var post: Post!
     var request: Request?
     var likeRef: Firebase!
-    var userPostRef: Firebase!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,13 +38,12 @@ class PostCell: UITableViewCell {
         
         showcaseImg.clipsToBounds = true
     }
-    
+    //ADD profImg: UIImage? IN FUNCTION PARAMETERS
     func configCell(post: Post, img: UIImage?) {
         
         self.post = post
         
         likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
-//        userPostRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("posts").childByAppendingPath(post.postKey)
         
         self.descriptionText.text = post.postDescription
         self.likesLbl.text = "\(post.likes)"
@@ -71,6 +69,25 @@ class PostCell: UITableViewCell {
             self.showcaseImg.hidden = true
         }
         
+//        if post.userImgUrl != nil {
+//            if profImg != nil {
+//                self.profileImg.image = profImg
+//                
+//            } else {
+//                request = Alamofire.request(.GET, post.userImgUrl!).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, err in
+//                    
+//                    if err == nil {
+//                        let imgP = UIImage(data: data!)!
+//                        self.profileImg.image = imgP
+//                        FeedVC.imageCache.setObject(imgP, forKey: self.post.userImgUrl!)
+//                    }
+//                })
+//            }
+//            
+//        } else {
+//            self.profileImg.hidden = true
+//        }
+        
         likeRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
             if let doesNotExist = snapshot.value as? NSNull {
                 self.likeImg.image = UIImage(named: "heart-empty")
@@ -79,15 +96,6 @@ class PostCell: UITableViewCell {
                 self.likeImg.image = UIImage(named: "heart-full")
             }
         })
-
-//        userPostRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
-//            if let userName = snapshot.value as? String {
-//                
-//                print(userName)
-////                post.userName = userName
-////                self.userNameLbl.text = post.userName
-//            }
-//        })
     }
     
     func likeTapped(sender: UITapGestureRecognizer) {

@@ -15,6 +15,7 @@ class Post {
     private var _imageUrl: String?
     private var _likes: Int!
     private var _userName: String!
+    private var _userImgUrl: String!
     private var _postKey: String!
     private var _postRef: Firebase!
     private var _userRef: Firebase!
@@ -25,6 +26,10 @@ class Post {
     
     var imageUrl: String? {
         return _imageUrl
+    }
+    
+    var userImgUrl: String? {
+        return _userImgUrl
     }
     
     var likes: Int {
@@ -70,6 +75,10 @@ class Post {
         
         if let name = dictionary["username"] as? String {
             self._userName = name
+        }
+        
+        if let userImg = dictionary["userimage"] as? String {
+            self._userImgUrl = userImg
         }
         
         self._postRef = DataService.ds.REF_POSTS.childByAppendingPath(self._postKey)

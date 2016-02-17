@@ -89,13 +89,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction func attemptSignUp(sender: AnyObject) {
         if let email = emailField.text where email != "", let pwd = passwordField.text where pwd != "", let nick = nickNameField.text where nick != "", let profImg = userImg.image where imageSelected == true {
             
-            var userImgUrl: String!
-            
             DataService.ds.REF_BASE.createUser(email, password: pwd, withValueCompletionBlock: { error, result in
                 if error != nil {
                     self.showErrorAlert("Oops!", msg: "Can't do this!")
                     
                 } else {
+                    
+                    var userImgUrl: String!
+                    
                     DataService.ds.REF_BASE.authUser(email, password: pwd, withCompletionBlock: { err, authData in
                         if err != nil {
                             print(err)
@@ -125,12 +126,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                                     if let imgLink = links["image_link"] as? String {
                                                         print("PROF IMG LINK: \(imgLink)")
                                                         
-//                                                        if imgLink.isEmpty {
-//                                                            userImgUrl = "IS EMPTY"
-//                                                            
-//                                                        } else {
-//                                                            userImgUrl = imgLink
-//                                                        }
+                                                        userImgUrl = imgLink
+                                                        
+                                                        var user: Dictionary <String, String>
+                                                        
+                                                        if userImgUrl != nil {
+                                                            user = ["provider": authData.provider!, "username": nick, "userimage": userImgUrl]
+                                                            DataService.ds.createFirebaseUser(authData.uid, user: user)
+                                                        }
                                                     }
                                                 }
                                             }
@@ -139,11 +142,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                     case .Failure(let error):
                                         print(error)
                                     }
+                                }
                             }
-                            
-                            let user = ["provider": authData.provider!, "username": nick]
-                            DataService.ds.createFirebaseUser(authData.uid, user: user)
-                        }
+                        
                     })
                     
                     NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
