@@ -133,6 +133,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                                         if userImgUrl != nil {
                                                             user = ["provider": authData.provider!, "username": nick, "userimage": userImgUrl]
                                                             DataService.ds.createFirebaseUser(authData.uid, user: user)
+                                                            
+                                                            NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
+                                                            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                                                         }
                                                     }
                                                 }
@@ -146,9 +149,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                             }
                         
                     })
-                    
-                    NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
-                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                 }
             })
             
