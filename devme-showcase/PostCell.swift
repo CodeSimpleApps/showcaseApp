@@ -38,8 +38,8 @@ class PostCell: UITableViewCell {
         
         showcaseImg.clipsToBounds = true
     }
-    //ADD profImg: UIImage? IN FUNCTION PARAMETERS
-    func configCell(post: Post, img: UIImage?) {
+    //ADD profImg: UIImage? IN FUNCTION PARAMETERS BELOW
+    func configCell(post: Post, img: UIImage?, profImg: UIImage?) {
         
         self.post = post
         
@@ -69,24 +69,24 @@ class PostCell: UITableViewCell {
             self.showcaseImg.hidden = true
         }
         
-//        if post.userImgUrl != nil {
-//            if profImg != nil {
-//                self.profileImg.image = profImg
-//                
-//            } else {
-//                request = Alamofire.request(.GET, post.userImgUrl!).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, err in
-//                    
-//                    if err == nil {
-//                        let imgP = UIImage(data: data!)!
-//                        self.profileImg.image = imgP
-//                        FeedVC.imageCache.setObject(imgP, forKey: self.post.userImgUrl!)
-//                    }
-//                })
-//            }
-//            
-//        } else {
-//            self.profileImg.hidden = true
-//        }
+        if post.userImgUrl != nil {
+            if profImg != nil {
+                self.profileImg.image = profImg
+                
+            } else {
+                request = Alamofire.request(.GET, post.userImgUrl!).validate(contentType: ["userimage/*"]).response(completionHandler: { request, response, data, err in
+                    
+                    if err == nil {
+                        let imgP = UIImage(data: data!)!
+                        self.profileImg.image = imgP
+                        FeedVC.imageCache.setObject(imgP, forKey: self.post.userImgUrl!)
+                    }
+                })
+            }
+            
+        } else {
+            self.profileImg.hidden = true
+        }
         
         likeRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
             if let doesNotExist = snapshot.value as? NSNull {

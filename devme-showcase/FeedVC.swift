@@ -58,13 +58,18 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
             self.tableView.reloadData()
         })
         
-        //HAVE CRASH ON SIGNUP NEW USER FOR SOME REASON IN APPDELEGATE
-//        DataService.ds.REF_USER_CURRENT.observeEventType(.Value, withBlock: { snapshot in
-//            let currentUser = snapshot.value.objectForKey("username") as? String
+//        if DataService.ds.REF_USER_CURRENT.authData != nil {
 //            
-//            print("CURRENT USER IN FEED VC: \(currentUser)")
-//            self.currentUser = currentUser!
-//        })
+//            //HAVE CRASH ON SIGNUP NEW USER FOR SOME REASON IN APPDELEGATE
+//            DataService.ds.REF_USER_CURRENT.observeEventType(.Value, withBlock: { snapshot in
+//                let currentUser = snapshot.value.objectForKey("username") as? String
+//
+//                print("CURRENT USER IN FEED VC: \(currentUser)")
+//                self.currentUser = currentUser!
+//            })
+//        } else {
+//            currentUser = "EMPTY"
+//        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -80,12 +85,19 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
             cell.request?.cancel()
             
             var img: UIImage?
+            var imgP: UIImage?
             
             if let url = post.imageUrl {
                 img = FeedVC.imageCache.objectForKey(url) as? UIImage
+                print("IMG \(img)")
             }
             
-            cell.configCell(post, img: img)
+            if let profUrl = post.userImgUrl {
+                imgP = FeedVC.imageCache.objectForKey(profUrl) as? UIImage
+                print("IMG P \(imgP)")
+            }
+            
+            cell.configCell(post, img: img, profImg: imgP)
             
             return cell
             
@@ -146,7 +158,15 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                                         if let imgLink = links["image_link"] as? String {
                                             print("LINK: \(imgLink)")
                                             
-                                            self.postToFirebase(imgLink)
+                                            DataService.ds.REF_USER_CURRENT.childByAppendingPath("userimage").observeSingleEventOfType(.Value, withBlock: { snapshot in
+                                                
+                                                print("THIS IS USER PICTURE \(snapshot.value)")
+                                                
+                                                if let userImgUrl = snapshot.value as? String {
+                                                    
+                                                    self.postToFirebase(imgLink, userImg: userImgUrl)
+                                                }
+                                            })
                                             
                                             DataService.ds.REF_POSTS.observeEventType(.ChildAdded, withBlock: { snapshot in
                                                     if let key = snapshot.key {
@@ -164,12 +184,12 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                     }
                 
             } else {
-                self.postToFirebase(nil)
+                self.postToFirebase(nil, userImg: nil)
             }
         }
     }
     
-    func postToFirebase(imgUrl: String?) {
+    func postToFirebase(imgUrl: String?, userImg: String?) {
         
         var post: Dictionary <String, AnyObject> = [
             "description": postField.text!,
@@ -180,6 +200,11 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         if imgUrl != nil {
             post["imageUrl"] = imgUrl!
             print(imgUrl)
+        }
+        
+        if userImg != nil {
+            post["userimage"] = userImg
+            print("CURRENT USER IMAGE \(userImg)")
         }
 
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
@@ -209,8 +234,5 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         NSUserDefaults.standardUserDefaults().setValue(nil, forKey: KEY_UID)
 
         self.dismissViewControllerAnimated(true, completion: nil)
-        
-//        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController")
-//        UIApplication.sharedApplication().keyWindow?.rootViewController = loginVC
     }
 }
