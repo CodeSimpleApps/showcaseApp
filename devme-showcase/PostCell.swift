@@ -38,7 +38,7 @@ class PostCell: UITableViewCell {
         
         showcaseImg.clipsToBounds = true
     }
-    //ADD profImg: UIImage? IN FUNCTION PARAMETERS BELOW
+
     func configCell(post: Post, img: UIImage?, profImg: UIImage?) {
         
         self.post = post
@@ -76,11 +76,9 @@ class PostCell: UITableViewCell {
             } else {
                 request = Alamofire.request(.GET, post.userImgUrl!).validate(contentType: ["userimage/*"]).response(completionHandler: { request, response, data, err in
                     
-                    if err == nil {
                         let imgP = UIImage(data: data!)!
                         self.profileImg.image = imgP
                         FeedVC.imageCache.setObject(imgP, forKey: self.post.userImgUrl!)
-                    }
                 })
             }
             

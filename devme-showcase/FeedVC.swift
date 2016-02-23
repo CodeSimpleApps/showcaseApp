@@ -30,6 +30,8 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("\(FeedVC.imageCache)")
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.estimatedRowHeight = 400

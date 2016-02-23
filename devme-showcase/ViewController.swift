@@ -32,6 +32,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        userImg.layer.cornerRadius = userImg.frame.size.width / 2
+        userImg.clipsToBounds = true
+        
         if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil && DataService.ds.REF_USER_CURRENT.authData != nil {
             self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
         }
