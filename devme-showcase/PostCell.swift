@@ -18,10 +18,12 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var likesLbl: UILabel!
     @IBOutlet weak var likeImg: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
+    @IBOutlet weak var deletePostBtn: UIButton!
     
     var post: Post!
     var request: Request?
     var likeRef: Firebase!
+    var userPostRef: Firebase!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +32,8 @@ class PostCell: UITableViewCell {
         tap.numberOfTapsRequired = 1
         likeImg.addGestureRecognizer(tap)
         likeImg.userInteractionEnabled = true
+        
+        deletePostBtn.hidden = true
     }
     
     override func drawRect(rect: CGRect) {
@@ -44,6 +48,18 @@ class PostCell: UITableViewCell {
         self.post = post
         
         likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
+        userPostRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("posts").childByAppendingPath(post.postKey)
+        
+        let userNameRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("username")
+        
+        userNameRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            if post.userName != snapshot.value as? String {
+                self.deletePostBtn.hidden = true
+                
+            } else if post.userName == snapshot.value as? String {
+                self.deletePostBtn.hidden = false
+            }
+        })
         
         self.descriptionText.text = post.postDescription
         self.likesLbl.text = "\(post.likes)"
@@ -109,5 +125,10 @@ class PostCell: UITableViewCell {
                 self.likeRef.removeValue()
             }
         })
+    }
+    
+    func deletePost() {
+        self.post.deletePost()
+        userPostRef.removeValue()
     }
 }

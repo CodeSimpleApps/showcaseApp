@@ -18,7 +18,6 @@ class Post {
     private var _userImgUrl: String!
     private var _postKey: String!
     private var _postRef: Firebase!
-    private var _userRef: Firebase!
     
     var postDescription: String {
         return _postDescription
@@ -46,10 +45,6 @@ class Post {
     
     var postRef: Firebase {
         return _postRef
-    }
-    
-    var userRef: Firebase {
-        return _userRef
     }
     
     init(description: String, imageUrl: String?, userName: String) {
@@ -93,5 +88,9 @@ class Post {
         }
         
         _postRef.childByAppendingPath("likes").setValue(_likes)
+    }
+    
+    func deletePost() {
+        _postRef.removeValue()
     }
 }

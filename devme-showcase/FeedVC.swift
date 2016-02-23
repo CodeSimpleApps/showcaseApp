@@ -236,4 +236,16 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
 
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    //PUT IT BACK IN POSTCELL.SWIFT
+    func deleteEditBtnPressed() {
+        let alert = UIAlertController(title: "Delete ore Edit?", message: "What do you wanna do?", preferredStyle: .Alert)
+        
+        alert.addAction(UIAlertAction(title: "Delete", style: .Destructive, handler: { action in
+            
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+    }
+
 }
