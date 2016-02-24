@@ -24,6 +24,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     var currentUserImgUrl = ""
     var currentUser = ""
     var userPostRef: Firebase!
+    var post: Post!
     
     static var imageCache = NSCache()
 
@@ -133,6 +134,11 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         }
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let post = posts[indexPath.row]
+        performSegueWithIdentifier("DetailVC", sender: post)
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         imageSelectorImage.image = image
@@ -236,16 +242,4 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
 
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    //PUT IT BACK IN POSTCELL.SWIFT
-    func deleteEditBtnPressed() {
-        let alert = UIAlertController(title: "Delete ore Edit?", message: "What do you wanna do?", preferredStyle: .Alert)
-        
-        alert.addAction(UIAlertAction(title: "Delete", style: .Destructive, handler: { action in
-            
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-    }
-
 }

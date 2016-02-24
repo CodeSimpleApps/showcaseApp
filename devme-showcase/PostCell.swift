@@ -18,13 +18,13 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var likesLbl: UILabel!
     @IBOutlet weak var likeImg: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
-    @IBOutlet weak var deletePostBtn: UIButton!
+    @IBOutlet weak var deletePostBtn: MaterialButton!
     
     var post: Post!
     var request: Request?
     var likeRef: Firebase!
     var userPostRef: Firebase!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -125,6 +125,10 @@ class PostCell: UITableViewCell {
                 self.likeRef.removeValue()
             }
         })
+    }
+    
+    @IBAction func deletePost(sender: AnyObject) {
+        deletePost()
     }
     
     func deletePost() {

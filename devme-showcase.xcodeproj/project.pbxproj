@@ -30,6 +30,7 @@
 		068E37DC1C54D05A003608A6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068E37D91C54D05A003608A6 /* FBSDKLoginKit.framework */; };
 		06C611611C57CE8600A2573F /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C611601C57CE8600A2573F /* FeedVC.swift */; };
 		06CB88791C56760E008534A5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB88781C56760E008534A5 /* DataService.swift */; };
+		06DE9AD51C7E0CDA006623BF /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE9AD41C7E0CDA006623BF /* DetailVC.swift */; };
 		D0EDAAEA74217AC9103C2DDF /* Pods_devme_showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C1998D7A8DE838D9C887A3 /* Pods_devme_showcase.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		068E37D91C54D05A003608A6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		06C611601C57CE8600A2573F /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		06CB88781C56760E008534A5 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		06DE9AD41C7E0CDA006623BF /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		65368A7E4EA759980853D8D8 /* Pods-devme-showcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devme-showcase.release.xcconfig"; path = "Pods/Target Support Files/Pods-devme-showcase/Pods-devme-showcase.release.xcconfig"; sourceTree = "<group>"; };
 		B89F4E9C2038365C5F927004 /* Pods-devme-showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devme-showcase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-devme-showcase/Pods-devme-showcase.debug.xcconfig"; sourceTree = "<group>"; };
 		D8C1998D7A8DE838D9C887A3 /* Pods_devme_showcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devme_showcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 			children = (
 				0674AAF91C53FBAD002A7E4F /* ViewController.swift */,
 				06C611601C57CE8600A2573F /* FeedVC.swift */,
+				06DE9AD41C7E0CDA006623BF /* DetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				0674AB371C53FF22002A7E4F /* MaterialView.swift in Sources */,
 				0674AAFA1C53FBAD002A7E4F /* ViewController.swift in Sources */,
 				06C611611C57CE8600A2573F /* FeedVC.swift in Sources */,
+				06DE9AD51C7E0CDA006623BF /* DetailVC.swift in Sources */,
 				06013CE41C57D05B002325E0 /* PostCell.swift in Sources */,
 				0674AAF81C53FBAD002A7E4F /* AppDelegate.swift in Sources */,
 				0674AB3A1C53FF92002A7E4F /* Constants.swift in Sources */,
