@@ -10,6 +10,10 @@ import UIKit
 import Alamofire
 import Firebase
 
+//protocol postCellDelegate {
+//    func deleteEditBtnPressed(cell: PostCell)
+//}
+
 class PostCell: UITableViewCell {
     
     @IBOutlet weak var profileImg: UIImageView!
@@ -25,6 +29,8 @@ class PostCell: UITableViewCell {
     var likeRef: Firebase!
     var userPostRef: Firebase!
     
+//    var postDelegate: postCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -128,7 +134,12 @@ class PostCell: UITableViewCell {
     }
     
     @IBAction func deletePost(sender: AnyObject) {
-        deletePost()
+//        deletePost()
+        
+        //THIS NEEDED FOR PROTOCOL
+//        if let delegate = postDelegate {
+//            delegate.deleteEditBtnPressed(self)
+//        }
     }
     
     func deletePost() {

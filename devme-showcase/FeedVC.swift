@@ -12,7 +12,7 @@ import Alamofire
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate /*, postCellDelegate*/ {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var postField: MaterialTextField!
@@ -94,6 +94,10 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                 
         if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
             
+//            if cell.postDelegate == nil {
+//                cell.postDelegate = self
+//            }
+            
             cell.request?.cancel()
             
             var img: UIImage?
@@ -132,11 +136,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         } else {
             return tableView.estimatedRowHeight
         }
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let post = posts[indexPath.row]
-        performSegueWithIdentifier("DetailVC", sender: post)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
@@ -242,4 +241,19 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
 
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+
+//    func deleteEditBtnPressed(cell: PostCell) {
+//        self.deleteEditBtnPressed()
+//    }
+//    
+//    func deleteEditBtnPressed() {
+//        let alert = UIAlertController(title: "Delete ore Edit?", message: "What do you wanna do?", preferredStyle: .ActionSheet)
+//        
+//        alert.addAction(UIAlertAction(title: "Delete", style: .Destructive, handler: nil))
+//        alert.addAction(UIAlertAction(title: "Edit", style: .Default, handler: { action in
+//            self.performSegueWithIdentifier("DetailVC", sender: self)
+//        }))
+//        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+//        self.presentViewController(alert, animated: true, completion: nil)
+//    }
 }
