@@ -10,10 +10,6 @@ import UIKit
 import Alamofire
 import Firebase
 
-//protocol postCellDelegate {
-//    func deleteEditBtnPressed(cell: PostCell)
-//}
-
 class PostCell: UITableViewCell {
     
     @IBOutlet weak var profileImg: UIImageView!
@@ -23,14 +19,13 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var likeImg: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var deletePostBtn: MaterialButton!
+    @IBOutlet weak var editPostBtn: MaterialButton!
     
     var post: Post!
     var request: Request?
     var likeRef: Firebase!
     var userPostRef: Firebase!
     
-//    var postDelegate: postCellDelegate?
-
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -61,9 +56,11 @@ class PostCell: UITableViewCell {
         userNameRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
             if post.userName != snapshot.value as? String {
                 self.deletePostBtn.hidden = true
+                self.editPostBtn.hidden = true
                 
             } else if post.userName == snapshot.value as? String {
                 self.deletePostBtn.hidden = false
+                self.editPostBtn.hidden = false
             }
         })
         
@@ -134,12 +131,7 @@ class PostCell: UITableViewCell {
     }
     
     @IBAction func deletePost(sender: AnyObject) {
-//        deletePost()
-        
-        //THIS NEEDED FOR PROTOCOL
-//        if let delegate = postDelegate {
-//            delegate.deleteEditBtnPressed(self)
-//        }
+        deletePost()
     }
     
     func deletePost() {
