@@ -19,7 +19,6 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var likeImg: UIImageView!
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var deletePostBtn: MaterialButton!
-    @IBOutlet weak var editPostBtn: MaterialButton!
     
     var post: Post!
     var request: Request?
@@ -56,11 +55,9 @@ class PostCell: UITableViewCell {
         userNameRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
             if post.userName != snapshot.value as? String {
                 self.deletePostBtn.hidden = true
-                self.editPostBtn.hidden = true
                 
             } else if post.userName == snapshot.value as? String {
                 self.deletePostBtn.hidden = false
-                self.editPostBtn.hidden = false
             }
         })
         

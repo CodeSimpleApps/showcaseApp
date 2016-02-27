@@ -93,4 +93,8 @@ class Post {
     func deletePost() {
         _postRef.removeValue()
     }
+    
+    func editPost(child: String, txt: String) {
+        _postRef.updateChildValues([child : txt])
+    }
 }

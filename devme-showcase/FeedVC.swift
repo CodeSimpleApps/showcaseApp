@@ -244,17 +244,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                 }
             }
         }
-        
-        if segue.identifier == "EditVC" {
-            if let destVC = segue.destinationViewController as? EditVC {
-                if let post = sender as? Post {
-                    destVC.post = post
-                }
-            }
-        }
     }
-    
-    
     
     @IBAction func logOutBtnPressed(sender: AnyObject) {
         DataService.ds.REF_USER_CURRENT.unauth()

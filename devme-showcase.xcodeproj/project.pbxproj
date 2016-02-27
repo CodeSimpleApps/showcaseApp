@@ -29,7 +29,6 @@
 		068E37DB1C54D05A003608A6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068E37D81C54D05A003608A6 /* FBSDKCoreKit.framework */; };
 		068E37DC1C54D05A003608A6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068E37D91C54D05A003608A6 /* FBSDKLoginKit.framework */; };
 		06C611611C57CE8600A2573F /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C611601C57CE8600A2573F /* FeedVC.swift */; };
-		06CB006D1C80A71C0066D0E2 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB006C1C80A71C0066D0E2 /* EditVC.swift */; };
 		06CB88791C56760E008534A5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB88781C56760E008534A5 /* DataService.swift */; };
 		06DE9AD51C7E0CDA006623BF /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE9AD41C7E0CDA006623BF /* DetailVC.swift */; };
 		D0EDAAEA74217AC9103C2DDF /* Pods_devme_showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C1998D7A8DE838D9C887A3 /* Pods_devme_showcase.framework */; };
@@ -81,7 +80,6 @@
 		068E37D81C54D05A003608A6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		068E37D91C54D05A003608A6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		06C611601C57CE8600A2573F /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
-		06CB006C1C80A71C0066D0E2 /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		06CB88781C56760E008534A5 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		06DE9AD41C7E0CDA006623BF /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		65368A7E4EA759980853D8D8 /* Pods-devme-showcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devme-showcase.release.xcconfig"; path = "Pods/Target Support Files/Pods-devme-showcase/Pods-devme-showcase.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				0674AAF91C53FBAD002A7E4F /* ViewController.swift */,
 				06C611601C57CE8600A2573F /* FeedVC.swift */,
 				06DE9AD41C7E0CDA006623BF /* DetailVC.swift */,
-				06CB006C1C80A71C0066D0E2 /* EditVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -463,7 +460,6 @@
 				0674AB3C1C5403DF002A7E4F /* MaterialButton.swift in Sources */,
 				063415C71C5BBAD6008B73A7 /* Post.swift in Sources */,
 				0633E5AE1C74EE100085441F /* Users.swift in Sources */,
-				06CB006D1C80A71C0066D0E2 /* EditVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
