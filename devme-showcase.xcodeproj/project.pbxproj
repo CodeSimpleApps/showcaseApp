@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		06013CE41C57D05B002325E0 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06013CE31C57D05B002325E0 /* PostCell.swift */; };
-		0633E5AE1C74EE100085441F /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0633E5AD1C74EE100085441F /* Users.swift */; };
 		063415C71C5BBAD6008B73A7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063415C61C5BBAD6008B73A7 /* Post.swift */; };
+		06586DC91C817F37000542E8 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06586DC81C817F37000542E8 /* CommentCell.swift */; };
+		06586DCB1C81814E000542E8 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06586DCA1C81814E000542E8 /* Comment.swift */; };
 		0674AAF81C53FBAD002A7E4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AAF71C53FBAD002A7E4F /* AppDelegate.swift */; };
 		0674AAFA1C53FBAD002A7E4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674AAF91C53FBAD002A7E4F /* ViewController.swift */; };
 		0674AAFD1C53FBAD002A7E4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0674AAFB1C53FBAD002A7E4F /* Main.storyboard */; };
@@ -53,8 +54,9 @@
 
 /* Begin PBXFileReference section */
 		06013CE31C57D05B002325E0 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		0633E5AD1C74EE100085441F /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		063415C61C5BBAD6008B73A7 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		06586DC81C817F37000542E8 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		06586DCA1C81814E000542E8 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		0674AAF41C53FBAD002A7E4F /* devme-showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "devme-showcase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0674AAF71C53FBAD002A7E4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0674AAF91C53FBAD002A7E4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				0674AB3B1C5403DF002A7E4F /* MaterialButton.swift */,
 				0674AB3D1C5406AF002A7E4F /* MaterialTextField.swift */,
 				06013CE31C57D05B002325E0 /* PostCell.swift */,
+				06586DC81C817F37000542E8 /* CommentCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -200,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				063415C61C5BBAD6008B73A7 /* Post.swift */,
-				0633E5AD1C74EE100085441F /* Users.swift */,
+				06586DCA1C81814E000542E8 /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06586DC91C817F37000542E8 /* CommentCell.swift in Sources */,
 				0674AB3E1C5406AF002A7E4F /* MaterialTextField.swift in Sources */,
 				06CB88791C56760E008534A5 /* DataService.swift in Sources */,
 				0674AB371C53FF22002A7E4F /* MaterialView.swift in Sources */,
@@ -455,11 +459,11 @@
 				06C611611C57CE8600A2573F /* FeedVC.swift in Sources */,
 				06DE9AD51C7E0CDA006623BF /* DetailVC.swift in Sources */,
 				06013CE41C57D05B002325E0 /* PostCell.swift in Sources */,
+				06586DCB1C81814E000542E8 /* Comment.swift in Sources */,
 				0674AAF81C53FBAD002A7E4F /* AppDelegate.swift in Sources */,
 				0674AB3A1C53FF92002A7E4F /* Constants.swift in Sources */,
 				0674AB3C1C5403DF002A7E4F /* MaterialButton.swift in Sources */,
 				063415C71C5BBAD6008B73A7 /* Post.swift in Sources */,
-				0633E5AE1C74EE100085441F /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

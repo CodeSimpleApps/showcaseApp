@@ -10,19 +10,23 @@ import UIKit
 import Alamofire
 import Firebase
 
-class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var detailShowcaseImg: UIImageView!
     @IBOutlet weak var detailShowcaseTextField: UITextView!
     @IBOutlet weak var detailView: MaterialView!
     @IBOutlet weak var detailTextField: MaterialTextField!
     @IBOutlet weak var imgSelector: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var commentTextField: MaterialTextField!
     
     var post: Post!
     var request: Request?
     var descriptionRef: Firebase!
     var imagePicker: UIImagePickerController!
     var imageSelected = false
+    
+    var comments = [Comment]()
 
     
     override func viewDidLoad() {
@@ -30,6 +34,9 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         
         if let post = post {
             detailShowcaseTextField.text = post.postDescription
@@ -54,6 +61,46 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                 self.detailShowcaseImg.hidden = true
             }
         }
+        
+        DataService.ds.REF_COMMENTS.observeEventType(.Value, withBlock: { snapshot in
+            self.comments = []
+            
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                
+                for snap in snapshots {
+                    
+                    print("THIS IS A COMMENT \(snap)")
+                    
+                    if let commentDict = snap.value as? Dictionary <String, AnyObject> {
+                        let key = snap.key
+                        let comment = Comment(commentKey: key, dict: commentDict)
+                        
+                        self.comments.insert(comment, atIndex: 0)
+                    }
+                }
+            }
+        })
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let comment = comments[indexPath.row]
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier("CommentCell") as? CommentCell {
+            cell.configCell(comment)
+            return cell
+            
+        } else {
+            return CommentCell()
+        }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return comments.count
     }
     
     @IBAction func editPostBtnPressed(sender: AnyObject) {
@@ -114,5 +161,9 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     @IBAction func selectImage(sender: UITapGestureRecognizer) {
         presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func makeComment(sender: AnyObject) {
+        
     }
 }
