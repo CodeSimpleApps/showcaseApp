@@ -13,7 +13,7 @@ import Firebase
 class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var detailShowcaseImg: UIImageView!
-    @IBOutlet weak var detailShowcaseTextField: UITextView!
+    @IBOutlet weak var detailShowcaseLbl: UILabel!
     @IBOutlet weak var detailView: MaterialView!
     @IBOutlet weak var detailTextField: MaterialTextField!
     @IBOutlet weak var imgSelector: UIImageView!
@@ -25,9 +25,8 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     var descriptionRef: Firebase!
     var imagePicker: UIImagePickerController!
     var imageSelected = false
-    
     var comments = [Comment]()
-
+    var currentUser = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +38,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         tableView.delegate = self
         
         if let post = post {
-            detailShowcaseTextField.text = post.postDescription
+            detailShowcaseLbl.text = post.postDescription
             
             var detailImg: UIImage?
             
@@ -79,7 +78,21 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                     }
                 }
             }
+            
+            self.tableView.reloadData()
         })
+        
+        if DataService.ds.REF_USER_CURRENT.authData != nil {
+            
+            DataService.ds.REF_USER_CURRENT.observeEventType(.Value, withBlock: { snapshot in
+                let currentUser = snapshot.value.objectForKey("username") as? String
+                
+                print("CURRENT USER IN FEED VC: \(currentUser)")
+                self.currentUser = currentUser!
+            })
+        } else {
+            currentUser = "EMPTY"
+        }
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -91,6 +104,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let comment = comments[indexPath.row]
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("CommentCell") as? CommentCell {
+            
             cell.configCell(comment)
             return cell
             
@@ -104,10 +118,6 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     }
     
     @IBAction func editPostBtnPressed(sender: AnyObject) {
-        editPostDescription()
-    }
-    
-    func editPostDescription() {
         
         if let post = post {
             if let txt = detailTextField.text where txt != "" {
@@ -165,5 +175,18 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     @IBAction func makeComment(sender: AnyObject) {
         
+        if let txt = commentTextField.text where txt != "" {
+            
+            var comment: Dictionary <String, AnyObject> = [
+                "username": currentUser,
+                "text": commentTextField.text!
+            ]
+            
+            let firebaseComment = DataService.ds.REF_COMMENTS.childByAutoId()
+            firebaseComment.setValue(comment)
+            
+            commentTextField.text = ""
+            tableView.reloadData()
+        }
     }
 }

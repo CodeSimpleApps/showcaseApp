@@ -12,6 +12,7 @@ class CommentCell: UITableViewCell {
     
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var deleteCommentBtn: MaterialButton!
     
     var comment: Comment!
 
@@ -23,7 +24,22 @@ class CommentCell: UITableViewCell {
         
         self.comment = comment
         
+        let userNameRef = DataService.ds.REF_COMMENTS.childByAppendingPath(comment.commentKey).childByAppendingPath("username")
+        
+        userNameRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            if comment.commentUserName != snapshot.value as? String {
+                self.deleteCommentBtn.hidden = true
+                
+            } else if comment.commentUserName == snapshot.value as? String {
+                self.deleteCommentBtn.hidden = false
+            }
+        })
+ 
         userNameLbl.text = comment.commentUserName
         commentTextView.text = comment.commentText
+    }
+    
+    @IBAction func deleteComment() {
+        self.comment.deleteComment()
     }
 }

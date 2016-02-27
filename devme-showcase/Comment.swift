@@ -50,4 +50,8 @@ class Comment {
         
         self._commentRef = DataService.ds.REF_COMMENTS.childByAppendingPath(self._commentKey)
     }
+    
+    func deleteComment() {
+        _commentRef.removeValue()
+    }
 }

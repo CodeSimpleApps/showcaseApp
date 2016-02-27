@@ -128,10 +128,6 @@ class PostCell: UITableViewCell {
     }
     
     @IBAction func deletePost(sender: AnyObject) {
-        deletePost()
-    }
-    
-    func deletePost() {
         self.post.deletePost()
         userPostRef.removeValue()
     }
