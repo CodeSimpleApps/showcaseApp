@@ -23,6 +23,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     var post: Post!
     var request: Request?
     var descriptionRef: Firebase!
+    var commentRef: Firebase!
     var imagePicker: UIImagePickerController!
     var imageSelected = false
     var comments = [Comment]()
@@ -182,11 +183,29 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                 "text": commentTextField.text!
             ]
             
+            DataService.ds.REF_COMMENTS.observeEventType(.ChildAdded, withBlock: { snapshot in
+                if let key = snapshot.key {
+                    self.commentToPost(key)
+                }
+            })
+            
             let firebaseComment = DataService.ds.REF_COMMENTS.childByAutoId()
             firebaseComment.setValue(comment)
             
             commentTextField.text = ""
             tableView.reloadData()
         }
+    }
+    
+    func commentToPost(commentKey: String) {
+        
+        commentRef = DataService.ds.REF_POSTS.childByAppendingPath(post.postKey).childByAppendingPath("comments").childByAppendingPath(commentKey)
+        
+        commentRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            print("THIS IS SNAPSHOT VALUE IN DETAILVC: \(snapshot.value)")
+            if let doesNotExist = snapshot.value as? NSNull {
+                self.commentRef.setValue(true)
+            }
+        })
     }
 }
