@@ -139,6 +139,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                                             
                                                             NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
                                                             self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                                                            
+                                                            self.emailField.text = ""
+                                                            self.passwordField.text = ""
+                                                            self.nickNameField.text = ""
                                                         }
                                                     }
                                                 }

@@ -16,6 +16,7 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var deleteCommentBtn: MaterialButton!
     
     var comment: Comment!
+    var post: Post!
     var userNameRef: Firebase!
     
     override func awakeFromNib() {

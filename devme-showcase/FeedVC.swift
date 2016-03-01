@@ -157,7 +157,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                 let urlStr = "https://post.imageshack.us/upload_api.php"
                 let url = NSURL(string: urlStr)!
                 let imgData = UIImageJPEGRepresentation(img, 0.2)!
-                let keyData = "PBFWVIAZ277b6635215df5b854e4cee43b000930".dataUsingEncoding(NSUTF8StringEncoding)!
+                let keyData = "12DJKPSU5fc3afbd01b1630cc718cae3043220f3".dataUsingEncoding(NSUTF8StringEncoding)!
                 let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
                 
                 Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in

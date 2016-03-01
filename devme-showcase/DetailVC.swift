@@ -70,6 +70,8 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         //Get access to comment's keys in specific post
         DataService.ds.REF_POSTS.childByAppendingPath(currentPostKey).childByAppendingPath("comments").observeEventType(.Value, withBlock: { snapshot in
             
+            self.comments = []
+            
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 
                 for snap in snapshots {
@@ -205,17 +207,6 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             tableView.reloadData()
         }
     }
-    
-//    func addComment(commentKey: String) {
-//        let comm = DataService.ds.REF_COMMENTS.childByAppendingPath(commentKey)
-//        
-//        comm.observeEventType(.Value, withBlock: { snapshot in
-//            if let commDict = snapshot.value as? Dictionary <String, AnyObject> {
-//                let specComment = Comment(commentKey: commentKey, dict: commDict)
-//                self.specificPostComment.insert(specComment, atIndex: 0)
-//            }
-//        })
-//    }
     
     func commentToPost(commentKey: String) {
         
