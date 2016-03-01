@@ -24,10 +24,12 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     var request: Request?
     var descriptionRef: Firebase!
     var commentRef: Firebase!
+    var postCommentsRef: Firebase!
     var imagePicker: UIImagePickerController!
     var imageSelected = false
     var comments = [Comment]()
     var currentUser = ""
+    var currentPostKey = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +42,9 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         if let post = post {
             detailShowcaseLbl.text = post.postDescription
+            currentPostKey = post.postKey
+            
+            print("CURRENT POST KEY IS \(currentPostKey)")
             
             var detailImg: UIImage?
             
@@ -62,25 +67,29 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             }
         }
         
-        DataService.ds.REF_COMMENTS.observeEventType(.Value, withBlock: { snapshot in
-            self.comments = []
+        //Get access to comment's keys in specific post
+        DataService.ds.REF_POSTS.childByAppendingPath(currentPostKey).childByAppendingPath("comments").observeEventType(.Value, withBlock: { snapshot in
             
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 
                 for snap in snapshots {
                     
-                    print("THIS IS A COMMENT \(snap)")
+                    let key = snap.key
                     
-                    if let commentDict = snap.value as? Dictionary <String, AnyObject> {
-                        let key = snap.key
-                        let comment = Comment(commentKey: key, dict: commentDict)
+                    print("THIS IS ARRAY OF COMMENT'S KEYS \(key)")
                         
-                        self.comments.insert(comment, atIndex: 0)
-                    }
+                    let comm = DataService.ds.REF_COMMENTS.childByAppendingPath(key)
+                        
+                    comm.observeEventType(.Value, withBlock: { snapshot in
+                        if let commentDict = snapshot.value as? Dictionary <String, AnyObject> {
+                            let specificComment = Comment(commentKey: key, dict: commentDict)
+                            
+                            self.comments.insert(specificComment, atIndex: 0)
+                        }
+                        self.tableView.reloadData()
+                    })
                 }
             }
-            
-            self.tableView.reloadData()
         })
         
         if DataService.ds.REF_USER_CURRENT.authData != nil {
@@ -196,6 +205,17 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             tableView.reloadData()
         }
     }
+    
+//    func addComment(commentKey: String) {
+//        let comm = DataService.ds.REF_COMMENTS.childByAppendingPath(commentKey)
+//        
+//        comm.observeEventType(.Value, withBlock: { snapshot in
+//            if let commDict = snapshot.value as? Dictionary <String, AnyObject> {
+//                let specComment = Comment(commentKey: commentKey, dict: commDict)
+//                self.specificPostComment.insert(specComment, atIndex: 0)
+//            }
+//        })
+//    }
     
     func commentToPost(commentKey: String) {
         

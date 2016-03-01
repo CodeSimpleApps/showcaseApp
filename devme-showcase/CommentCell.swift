@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CommentCell: UITableViewCell {
     
@@ -15,7 +16,8 @@ class CommentCell: UITableViewCell {
     @IBOutlet weak var deleteCommentBtn: MaterialButton!
     
     var comment: Comment!
-
+    var userNameRef: Firebase!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -24,7 +26,7 @@ class CommentCell: UITableViewCell {
         
         self.comment = comment
         
-        let userNameRef = DataService.ds.REF_COMMENTS.childByAppendingPath(comment.commentKey).childByAppendingPath("username")
+        userNameRef = DataService.ds.REF_COMMENTS.childByAppendingPath(comment.commentKey).childByAppendingPath("username")
         
         userNameRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
             if comment.commentUserName != snapshot.value as? String {
