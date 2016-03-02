@@ -34,6 +34,8 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        detailShowcaseLbl.sizeToFit()
+        
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
@@ -67,7 +69,6 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             }
         }
         
-        //Get access to comment's keys in specific post
         DataService.ds.REF_POSTS.childByAppendingPath(currentPostKey).childByAppendingPath("comments").observeEventType(.Value, withBlock: { snapshot in
             
             self.comments = []
@@ -105,6 +106,12 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         } else {
             currentUser = "EMPTY"
         }
+        
+        DataService.ds.REF_COMMENTS.observeEventType(.ChildRemoved, withBlock: { snapshot in
+            if let key = snapshot.key {
+                DataService.ds.REF_POSTS.childByAppendingPath(self.currentPostKey).childByAppendingPath("comments").childByAppendingPath(key).removeValue()
+            }
+        })
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -134,6 +141,8 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         if let post = post {
             if let txt = detailTextField.text where txt != "" {
                 post.editPost("description", txt: txt)
+                detailShowcaseLbl.text = txt
+                detailTextField.text = ""
             }
             
             if let img = imgSelector.image where imageSelected == true {
