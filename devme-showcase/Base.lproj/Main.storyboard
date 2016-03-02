@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E49a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E56a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -7,6 +7,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NotoSans-Bold.ttf">
+            <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
             <string>NotoSans-Bold</string>
@@ -88,7 +89,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb-icon" translatesAutoresizingMaskIntoConstraints="NO" id="6Sv-Oa-94R">
                                                 <rect key="frame" x="0.0" y="22" width="65" height="65"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-oV-aPe" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-oV-aPe" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
                                                 <rect key="frame" x="105" y="38" width="439" height="33"/>
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
@@ -144,7 +145,7 @@
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ol-Ub-izu" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ol-Ub-izu" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
                                         <rect key="frame" x="194" y="336" width="173" height="33"/>
                                         <color key="backgroundColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -174,7 +175,7 @@
                                             <action selector="attemptLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cud-yp-LC8"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="VJo-nd-XnJ">
+                                    <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="VJo-nd-XnJ">
                                         <rect key="frame" x="490" y="278" width="50" height="50"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -185,7 +186,7 @@
                                             <outletCollection property="gestureRecognizers" destination="BR3-i7-bWv" appends="YES" id="dxo-Ah-DxP"/>
                                         </connections>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a profile pick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2n-wr-hQE">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a profile pick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2n-wr-hQE">
                                         <rect key="frame" x="20" y="291" width="179" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="179" id="7Pm-dR-eJw"/>
@@ -195,7 +196,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-Bq-EGb">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-Bq-EGb">
                                         <rect key="frame" x="20" y="203" width="179" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="PAx-UN-sve"/>
@@ -205,7 +206,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOD-dr-UtI" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
+                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOD-dr-UtI" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
                                         <rect key="frame" x="20" y="235" width="520" height="35"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -215,6 +216,21 @@
                                         <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjf-uo-esP" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
+                                        <rect key="frame" x="194" y="167" width="173" height="33"/>
+                                        <color key="backgroundColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="HW9-DW-964"/>
+                                            <constraint firstAttribute="width" constant="173" id="Mvb-WY-T4Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                        <state key="normal" title="Create User">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createUserBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dal-hO-RDu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -222,6 +238,7 @@
                                     <constraint firstItem="apJ-MX-dD8" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="2Pb-ke-LkC"/>
                                     <constraint firstItem="apJ-MX-dD8" firstAttribute="top" secondItem="Tpo-b7-gUg" secondAttribute="bottom" constant="8" id="370-Fc-dOO"/>
                                     <constraint firstItem="vYJ-5c-E3F" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="5cb-4J-78g"/>
+                                    <constraint firstItem="Cjf-uo-esP" firstAttribute="top" secondItem="ayU-f3-GfT" secondAttribute="bottom" constant="8" id="76U-v9-631"/>
                                     <constraint firstItem="BOD-dr-UtI" firstAttribute="top" secondItem="eYG-Bq-EGb" secondAttribute="bottom" constant="8" id="BT3-AZ-cbf"/>
                                     <constraint firstItem="eYG-Bq-EGb" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="Kjf-Dh-9wq"/>
                                     <constraint firstItem="BOD-dr-UtI" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="Mqt-qi-CwV"/>
@@ -230,6 +247,7 @@
                                     <constraint firstItem="1ol-Ub-izu" firstAttribute="top" secondItem="w2n-wr-hQE" secondAttribute="bottom" constant="21" id="VwK-yI-N6B"/>
                                     <constraint firstAttribute="bottom" secondItem="VJo-nd-XnJ" secondAttribute="bottom" constant="49" id="Zgl-WM-3sk"/>
                                     <constraint firstItem="Tpo-b7-gUg" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="bLY-Dj-0hr"/>
+                                    <constraint firstItem="Cjf-uo-esP" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="cLy-4W-7Cr"/>
                                     <constraint firstItem="Tpo-b7-gUg" firstAttribute="top" secondItem="vYJ-5c-E3F" secondAttribute="bottom" constant="8" id="dg9-u2-DuA"/>
                                     <constraint firstItem="VJo-nd-XnJ" firstAttribute="top" secondItem="BOD-dr-UtI" secondAttribute="bottom" constant="8" id="dxp-DP-Zlf"/>
                                     <constraint firstAttribute="trailing" secondItem="VJo-nd-XnJ" secondAttribute="trailing" constant="20" id="e24-js-9MR"/>
@@ -263,9 +281,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="createUserBtn" destination="Cjf-uo-esP" id="LKc-lo-fyO"/>
                         <outlet property="emailField" destination="Tpo-b7-gUg" id="EXn-Qh-wrb"/>
+                        <outlet property="loginBtn" destination="ayU-f3-GfT" id="La6-1u-HlE"/>
                         <outlet property="nickNameField" destination="BOD-dr-UtI" id="UJq-Iu-3N6"/>
                         <outlet property="passwordField" destination="apJ-MX-dD8" id="L3T-Yz-Nbu"/>
+                        <outlet property="profilePickLbl" destination="w2n-wr-hQE" id="pDd-qg-scI"/>
+                        <outlet property="profileSettingsLbl" destination="eYG-Bq-EGb" id="SrJ-c5-4JT"/>
+                        <outlet property="signupBtn" destination="1ol-Ub-izu" id="OSK-qb-l1p"/>
                         <outlet property="userImg" destination="VJo-nd-XnJ" id="8nO-HA-W0h"/>
                         <segue destination="T9L-ty-jb3" kind="show" identifier="LoggedIn" action="showDetailViewController:sender:" id="Ed1-hV-nB2"/>
                     </connections>

@@ -33,9 +33,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        detailShowcaseLbl.sizeToFit()
-        
+                
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         
@@ -71,6 +69,8 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         DataService.ds.REF_POSTS.childByAppendingPath(currentPostKey).childByAppendingPath("comments").observeEventType(.Value, withBlock: { snapshot in
             
+            print(snapshot.value)
+            
             self.comments = []
             
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
@@ -80,10 +80,10 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                     let key = snap.key
                     
                     print("THIS IS ARRAY OF COMMENT'S KEYS \(key)")
-                        
+                    
                     let comm = DataService.ds.REF_COMMENTS.childByAppendingPath(key)
-                        
-                    comm.observeEventType(.Value, withBlock: { snapshot in
+                    
+                    comm.observeSingleEventOfType(.Value, withBlock: { snapshot in
                         if let commentDict = snapshot.value as? Dictionary <String, AnyObject> {
                             let specificComment = Comment(commentKey: key, dict: commentDict)
                             
@@ -100,7 +100,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             DataService.ds.REF_USER_CURRENT.observeEventType(.Value, withBlock: { snapshot in
                 let currentUser = snapshot.value.objectForKey("username") as? String
                 
-                print("CURRENT USER IN FEED VC: \(currentUser)")
+                print("CURRENT USER IN DETAIL VC: \(currentUser)")
                 self.currentUser = currentUser!
             })
         } else {
@@ -219,7 +219,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     func commentToPost(commentKey: String) {
         
-        commentRef = DataService.ds.REF_POSTS.childByAppendingPath(post.postKey).childByAppendingPath("comments").childByAppendingPath(commentKey)
+        commentRef = DataService.ds.REF_POSTS.childByAppendingPath(currentPostKey).childByAppendingPath("comments").childByAppendingPath(commentKey)
         
         commentRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
             print("THIS IS SNAPSHOT VALUE IN DETAILVC: \(snapshot.value)")

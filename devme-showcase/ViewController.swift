@@ -17,6 +17,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var passwordField: MaterialTextField!
     @IBOutlet weak var nickNameField: MaterialTextField!
     @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var loginBtn: MaterialButton!
+    @IBOutlet weak var createUserBtn: MaterialButton!
+    @IBOutlet weak var profileSettingsLbl: UILabel!
+    @IBOutlet weak var profilePickLbl: UILabel!
+    @IBOutlet weak var signupBtn: MaterialButton!
 
     var imagePicker: UIImagePickerController!
     
@@ -68,6 +73,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 })
             }
         }
+    }
+    
+    @IBAction func createUserBtnPressed(sender: AnyObject) {
+        loginBtn.hidden = true
+        createUserBtn.hidden = true
+        profilePickLbl.hidden = false
+        profileSettingsLbl.hidden = false
+        nickNameField.hidden = false
+        userImg.hidden = false
+        signupBtn.hidden = false
     }
     
     @IBAction func attemptLogin(sender: UIButton) {
@@ -143,6 +158,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                                             self.emailField.text = ""
                                                             self.passwordField.text = ""
                                                             self.nickNameField.text = ""
+                                                            
+                                                            self.loginBtn.hidden = false
+                                                            self.createUserBtn.hidden = false
+                                                            self.profilePickLbl.hidden = true
+                                                            self.profileSettingsLbl.hidden = true
+                                                            self.nickNameField.hidden = true
+                                                            self.userImg.hidden = true
+                                                            self.signupBtn.hidden = true
                                                         }
                                                     }
                                                 }
