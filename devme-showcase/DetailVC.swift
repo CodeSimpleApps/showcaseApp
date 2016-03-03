@@ -105,6 +105,10 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         })
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

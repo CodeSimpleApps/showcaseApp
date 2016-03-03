@@ -107,6 +107,10 @@
 		<string>NotoSans-BoldItalic.ttf</string>
 		<string>NotoSans-Italic.ttf</string>
 		<string>NotoSans-Regular.ttf</string>
+		<string>CaviarDreams_Bold.ttf</string>
+		<string>CaviarDreams.ttf</string>
+		<string>CaviarDreams_BoldItalic.ttf</string>
+		<string>CaviarDreams_Italic.ttf</string>
 	</array>
 </dict>
 </plist>

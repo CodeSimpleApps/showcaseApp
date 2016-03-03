@@ -84,6 +84,10 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         })
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

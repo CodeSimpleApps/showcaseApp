@@ -37,12 +37,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        userImg.layer.cornerRadius = userImg.frame.size.width / 2
         userImg.clipsToBounds = true
         
         if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil && DataService.ds.REF_USER_CURRENT.authData != nil {
             self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
         }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func fbBtnPressed(sender: UIButton) {
@@ -55,22 +58,28 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 
             } else {
                 let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
-                print("successfully logged in with facebook. \(accessToken)")
                 
-                DataService.ds.REF_BASE.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { error, authData in
-                    if error != nil {
-                        print("Login failed. \(error)")
-                        
-                    } else {
-                        print("Logged in! \(authData)")
-                        
-                        let user = ["provider": authData.provider!, "username": "name"]
-                        DataService.ds.createFirebaseUser(authData.uid, user: user)
-                        
-                        NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
-                        self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                    }
-                })
+                if accessToken != nil {
+                    print("successfully logged in with facebook. \(accessToken)")
+                    
+                    DataService.ds.REF_BASE.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { error, authData in
+                        if error != nil {
+                            print("Login failed. \(error)")
+                            
+                        } else {
+                            print("Logged in! \(authData)")
+                            
+                            let user = ["provider": authData.provider!, "username": "name"]
+                            DataService.ds.createFirebaseUser(authData.uid, user: user)
+                            
+                            NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
+                            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                        }
+                    })
+                    
+                } else {
+                    print("some err")
+                }
             }
         }
     }
@@ -135,49 +144,48 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                 
                                 }) { encodingResult in
                                     
-                                    switch encodingResult {
-                                        
-                                    case .Success(let upload, _, _):
-                                        upload.responseJSON(completionHandler: { response in
-                                            if let info = response.result.value as? Dictionary <String, AnyObject> {
-                                                if let links = info["links"] as? Dictionary <String, AnyObject> {
-                                                    if let imgLink = links["image_link"] as? String {
-                                                        print("PROF IMG LINK: \(imgLink)")
+                                switch encodingResult {
+                                    
+                                case .Success(let upload, _, _):
+                                    upload.responseJSON(completionHandler: { response in
+                                        if let info = response.result.value as? Dictionary <String, AnyObject> {
+                                            if let links = info["links"] as? Dictionary <String, AnyObject> {
+                                                if let imgLink = links["image_link"] as? String {
+                                                    print("PROF IMG LINK: \(imgLink)")
+                                                    
+                                                    userImgUrl = imgLink
+                                                    
+                                                    var user: Dictionary <String, String>
+                                                    
+                                                    if userImgUrl != nil {
+                                                        user = ["provider": authData.provider!, "username": nick, "userimage": userImgUrl]
+                                                        DataService.ds.createFirebaseUser(authData.uid, user: user)
                                                         
-                                                        userImgUrl = imgLink
+                                                        NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
+                                                        self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                                                         
-                                                        var user: Dictionary <String, String>
+                                                        self.emailField.text = ""
+                                                        self.passwordField.text = ""
+                                                        self.nickNameField.text = ""
                                                         
-                                                        if userImgUrl != nil {
-                                                            user = ["provider": authData.provider!, "username": nick, "userimage": userImgUrl]
-                                                            DataService.ds.createFirebaseUser(authData.uid, user: user)
-                                                            
-                                                            NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
-                                                            self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                                                            
-                                                            self.emailField.text = ""
-                                                            self.passwordField.text = ""
-                                                            self.nickNameField.text = ""
-                                                            
-                                                            self.loginBtn.hidden = false
-                                                            self.createUserBtn.hidden = false
-                                                            self.profilePickLbl.hidden = true
-                                                            self.profileSettingsLbl.hidden = true
-                                                            self.nickNameField.hidden = true
-                                                            self.userImg.hidden = true
-                                                            self.signupBtn.hidden = true
-                                                        }
+                                                        self.loginBtn.hidden = false
+                                                        self.createUserBtn.hidden = false
+                                                        self.profilePickLbl.hidden = true
+                                                        self.profileSettingsLbl.hidden = true
+                                                        self.nickNameField.hidden = true
+                                                        self.userImg.hidden = true
+                                                        self.signupBtn.hidden = true
                                                     }
                                                 }
                                             }
-                                        })
-                                        
-                                    case .Failure(let error):
-                                        print(error)
-                                    }
+                                        }
+                                    })
+                                    
+                                case .Failure(let error):
+                                    print(error)
                                 }
                             }
-                        
+                        }
                     })
                 }
             })

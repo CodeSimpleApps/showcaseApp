@@ -6,34 +6,36 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NotoSans-Bold.ttf">
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
-            <string>NotoSans-Bold</string>
+        <mutableArray key="CaviarDreams.ttf">
+            <string>CaviarDreams</string>
+            <string>CaviarDreams</string>
+            <string>CaviarDreams</string>
+            <string>CaviarDreams</string>
+            <string>CaviarDreams</string>
+            <string>CaviarDreams</string>
+            <string>CaviarDreams</string>
+            <string>CaviarDreams</string>
+            <string>CaviarDreams</string>
+            <string>CaviarDreams</string>
+            <string>CaviarDreams</string>
+        </mutableArray>
+        <mutableArray key="CaviarDreams_Bold.ttf">
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
         </mutableArray>
         <mutableArray key="NotoSans-Regular.ttf">
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
-            <string>NotoSans</string>
             <string>NotoSans</string>
         </mutableArray>
     </customFonts>
@@ -59,11 +61,11 @@
                                             <constraint firstAttribute="height" constant="21" id="KiV-M3-Xcm"/>
                                             <constraint firstAttribute="width" constant="147" id="mSZ-nq-sdA"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="code-icon-logo" translatesAutoresizingMaskIntoConstraints="NO" id="qRI-gi-nMh">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thoughts" translatesAutoresizingMaskIntoConstraints="NO" id="qRI-gi-nMh">
                                         <rect key="frame" x="546" y="16" width="34" height="39"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="39" id="gT9-x3-tsB"/>
@@ -71,7 +73,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.95686274509803915" green="0.31764705882352939" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Y9G-J9-CDj" firstAttribute="leading" secondItem="cCR-mH-m6i" secondAttribute="leading" constant="20" id="QPe-qN-sAS"/>
                                     <constraint firstAttribute="height" constant="128" id="bjm-6Q-3hb"/>
@@ -86,13 +88,10 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="pLh-S8-j9S">
                                         <rect key="frame" x="8" y="10" width="544" height="108"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb-icon" translatesAutoresizingMaskIntoConstraints="NO" id="6Sv-Oa-94R">
-                                                <rect key="frame" x="0.0" y="22" width="65" height="65"/>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-oV-aPe" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
-                                                <rect key="frame" x="105" y="38" width="439" height="33"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-oV-aPe" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="39" width="544" height="31"/>
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="15"/>
                                                 <state key="normal" title="FACEBOOK LOGIN">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -121,7 +120,7 @@
                                             <constraint firstAttribute="height" constant="24" id="YiB-u2-fbe"/>
                                             <constraint firstAttribute="width" constant="179" id="gb6-6c-J8L"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -132,8 +131,8 @@
                                             <constraint firstAttribute="height" constant="35" id="bzA-M9-cvH"/>
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apJ-MX-dD8" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
                                         <rect key="frame" x="20" y="83" width="520" height="35"/>
@@ -142,17 +141,17 @@
                                             <constraint firstAttribute="height" constant="35" id="9RP-TO-LCx"/>
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ol-Ub-izu" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
                                         <rect key="frame" x="194" y="336" width="173" height="33"/>
-                                        <color key="backgroundColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.47058823529411764" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="1IO-lu-lGd"/>
                                             <constraint firstAttribute="width" constant="173" id="Ekp-QA-AiV"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="15"/>
                                         <state key="normal" title="Sign Up">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -162,12 +161,12 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayU-f3-GfT" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
                                         <rect key="frame" x="194" y="126" width="173" height="33"/>
-                                        <color key="backgroundColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.47058823529411764" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="R91-1F-Wnl"/>
                                             <constraint firstAttribute="width" constant="173" id="Yqe-6C-PI5"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="15"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -186,13 +185,38 @@
                                             <outletCollection property="gestureRecognizers" destination="BR3-i7-bWv" appends="YES" id="dxo-Ah-DxP"/>
                                         </connections>
                                     </imageView>
+                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOD-dr-UtI" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="235" width="520" height="35"/>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="wXh-Pa-Otp"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjf-uo-esP" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
+                                        <rect key="frame" x="194" y="167" width="173" height="33"/>
+                                        <color key="backgroundColor" red="0.47058823529411764" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="33" id="HW9-DW-964"/>
+                                            <constraint firstAttribute="width" constant="173" id="Mvb-WY-T4Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="15"/>
+                                        <state key="normal" title="Create User">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createUserBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dal-hO-RDu"/>
+                                        </connections>
+                                    </button>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a profile pick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2n-wr-hQE">
                                         <rect key="frame" x="20" y="291" width="179" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="179" id="7Pm-dR-eJw"/>
                                             <constraint firstAttribute="height" constant="24" id="uJF-cA-I8h"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -202,35 +226,10 @@
                                             <constraint firstAttribute="height" constant="24" id="PAx-UN-sve"/>
                                             <constraint firstAttribute="width" constant="179" id="lvA-PI-nOA"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOD-dr-UtI" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="235" width="520" height="35"/>
-                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="wXh-Pa-Otp"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjf-uo-esP" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="194" y="167" width="173" height="33"/>
-                                        <color key="backgroundColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="33" id="HW9-DW-964"/>
-                                            <constraint firstAttribute="width" constant="173" id="Mvb-WY-T4Z"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
-                                        <state key="normal" title="Create User">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="createUserBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dal-hO-RDu"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -328,7 +327,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Vk-gj-w0i" userLabel="Container" customClass="MaterialView" customModule="devme_showcase" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="8" width="560" height="384"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="NG7-Rv-Eqq">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="NG7-Rv-Eqq">
                                                             <rect key="frame" x="8" y="8" width="50" height="50"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="b08-FT-q4D"/>
@@ -340,8 +339,8 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="5Ht-gH-7ZE"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
-                                                            <color key="textColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
+                                                            <color key="textColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1440" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIv-0Z-3Bo">
@@ -350,8 +349,8 @@
                                                                 <constraint firstAttribute="width" constant="63" id="DnY-8K-pqj"/>
                                                                 <constraint firstAttribute="height" constant="29" id="VXW-B2-md7"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
+                                                            <color key="textColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMh-4c-PzO">
@@ -360,7 +359,7 @@
                                                                 <constraint firstAttribute="width" constant="63" id="Hs8-Uc-XY6"/>
                                                                 <constraint firstAttribute="height" constant="29" id="Slq-Yb-bM1"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="17"/>
                                                             <color key="textColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -374,7 +373,7 @@
                                                             </constraints>
                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                             <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                                             <variation key="default">
@@ -384,15 +383,8 @@
                                                                 </mask>
                                                             </variation>
                                                         </textView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen" translatesAutoresizingMaskIntoConstraints="NO" id="r4a-dM-2gI">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="r4a-dM-2gI">
                                                             <rect key="frame" x="8" y="143" width="544" height="211"/>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="zMe-cF-OKj">
-                                                            <rect key="frame" x="172" y="8" width="50" height="50"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="J0s-W7-wdf"/>
-                                                                <constraint firstAttribute="height" constant="50" id="NvR-rl-NP0"/>
-                                                            </constraints>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2D9-7f-JM0" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
                                                             <rect key="frame" x="489" y="351" width="63" height="33"/>
@@ -408,12 +400,19 @@
                                                                 <action selector="deletePost:" destination="1DV-5n-YWj" eventType="touchUpInside" id="MWK-Eq-1kb"/>
                                                             </connections>
                                                         </button>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="zMe-cF-OKj">
+                                                            <rect key="frame" x="172" y="18" width="30" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="30" id="J0s-W7-wdf"/>
+                                                                <constraint firstAttribute="height" constant="30" id="NvR-rl-NP0"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="zMe-cF-OKj" firstAttribute="leading" secondItem="ZfX-wt-pbo" secondAttribute="trailing" constant="8" id="0IT-ab-Tf4"/>
                                                         <constraint firstItem="ZfX-wt-pbo" firstAttribute="leading" secondItem="NG7-Rv-Eqq" secondAttribute="trailing" constant="6" id="0tw-eE-Gfb"/>
-                                                        <constraint firstItem="QS6-x2-x6R" firstAttribute="top" secondItem="zMe-cF-OKj" secondAttribute="bottom" constant="8" id="574-Lp-nA2"/>
+                                                        <constraint firstItem="QS6-x2-x6R" firstAttribute="top" secondItem="zMe-cF-OKj" secondAttribute="bottom" constant="18" id="574-Lp-nA2"/>
                                                         <constraint firstAttribute="trailing" secondItem="cIv-0Z-3Bo" secondAttribute="trailing" constant="8" id="G3c-FW-itM"/>
                                                         <constraint firstAttribute="trailing" secondItem="sMh-4c-PzO" secondAttribute="trailing" constant="8" id="Gg9-ZR-KN2"/>
                                                         <constraint firstAttribute="trailing" secondItem="2D9-7f-JM0" secondAttribute="trailing" constant="8" id="MBR-bD-Apc"/>
@@ -431,7 +430,7 @@
                                                         <constraint firstItem="QS6-x2-x6R" firstAttribute="leading" secondItem="4Vk-gj-w0i" secondAttribute="leading" constant="8" id="kOR-aw-cNa"/>
                                                         <constraint firstItem="QS6-x2-x6R" firstAttribute="top" secondItem="sMh-4c-PzO" secondAttribute="bottom" constant="8" id="lfL-EQ-5lK"/>
                                                         <constraint firstItem="r4a-dM-2gI" firstAttribute="leading" secondItem="4Vk-gj-w0i" secondAttribute="leading" constant="8" id="wCa-4w-3fZ"/>
-                                                        <constraint firstItem="zMe-cF-OKj" firstAttribute="top" secondItem="4Vk-gj-w0i" secondAttribute="top" constant="8" id="wmK-2m-8lY"/>
+                                                        <constraint firstItem="zMe-cF-OKj" firstAttribute="top" secondItem="4Vk-gj-w0i" secondAttribute="top" constant="18" id="wmK-2m-8lY"/>
                                                         <constraint firstAttribute="trailing" secondItem="QS6-x2-x6R" secondAttribute="trailing" constant="8" id="xeW-Nd-cNA"/>
                                                     </constraints>
                                                     <variation key="default">
@@ -466,12 +465,12 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqd-Vb-TIh" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
                                         <rect key="frame" x="498" y="8" width="54" height="54"/>
-                                        <color key="backgroundColor" red="0.0" green="0.70588235294117641" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="54" id="6bx-J1-hsL"/>
                                             <constraint firstAttribute="height" constant="54" id="ph4-ZU-9Pn"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="15"/>
                                         <state key="normal" title="POST">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -496,7 +495,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="Bmd-nd-GYc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
@@ -577,7 +576,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7J4-wh-vT1" customClass="MaterialView" customModule="devme_showcase" customModuleProvider="target">
                                 <rect key="frame" x="20" y="126" width="560" height="116"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screen" translatesAutoresizingMaskIntoConstraints="NO" id="duB-OA-AEW">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="duB-OA-AEW">
                                         <rect key="frame" x="452" y="8" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="211" id="46d-oc-Wrq"/>
@@ -592,7 +591,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRl-4h-RfB">
                                         <rect key="frame" x="8" y="8" width="436" height="100"/>
-                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -617,17 +616,17 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="BgT-lD-0yc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8oj-V3-lDP" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
                                         <rect key="frame" x="498" y="8" width="54" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="NDo-qW-V3c"/>
                                             <constraint firstAttribute="width" constant="54" id="t5z-TE-4fS"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="15"/>
                                         <state key="normal" title="EDIT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -674,17 +673,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="demonslayer31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SQz-Wp-Fcp">
-                                                    <rect key="frame" x="8" y="8" width="473" height="14"/>
-                                                    <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="10"/>
-                                                    <color key="textColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="8" y="8" width="473" height="13"/>
+                                                    <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="10"/>
+                                                    <color key="textColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3kB-wp-4p4">
-                                                    <rect key="frame" x="8" y="30" width="544" height="38"/>
+                                                    <rect key="frame" x="8" y="28" width="544" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="10"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqj-R6-ErN" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
@@ -693,7 +692,7 @@
                                                         <constraint firstAttribute="width" constant="63" id="e6k-Zk-6Sx"/>
                                                         <constraint firstAttribute="height" constant="18" id="yr4-xI-r8Q"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="10"/>
                                                     <state key="normal" title="Delete">
                                                         <color key="titleColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -707,7 +706,7 @@
                                                 <constraint firstItem="SQz-Wp-Fcp" firstAttribute="top" secondItem="SQ4-I1-pkA" secondAttribute="topMargin" id="6jK-k9-nIj"/>
                                                 <constraint firstItem="SQz-Wp-Fcp" firstAttribute="trailing" secondItem="SQ4-I1-pkA" secondAttribute="trailingMargin" constant="-71" id="LMb-BS-eGk"/>
                                                 <constraint firstItem="SQz-Wp-Fcp" firstAttribute="leading" secondItem="SQ4-I1-pkA" secondAttribute="leadingMargin" id="Uhl-fy-5al"/>
-                                                <constraint firstItem="3kB-wp-4p4" firstAttribute="top" secondItem="SQz-Wp-Fcp" secondAttribute="bottom" constant="8" id="Xtg-gw-Q8S"/>
+                                                <constraint firstItem="3kB-wp-4p4" firstAttribute="top" secondItem="SQz-Wp-Fcp" secondAttribute="bottom" constant="7" id="Xtg-gw-Q8S"/>
                                                 <constraint firstItem="uqj-R6-ErN" firstAttribute="trailing" secondItem="SQ4-I1-pkA" secondAttribute="trailingMargin" id="aKp-GG-zBe"/>
                                                 <constraint firstItem="3kB-wp-4p4" firstAttribute="leading" secondItem="SQ4-I1-pkA" secondAttribute="leadingMargin" id="hAd-YU-igi"/>
                                                 <constraint firstItem="uqj-R6-ErN" firstAttribute="top" secondItem="SQ4-I1-pkA" secondAttribute="topMargin" constant="-4" id="tvD-l7-oiT"/>
@@ -731,17 +730,17 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="mGS-KG-5Pe"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ScU-3j-3qb" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
                                         <rect key="frame" x="473" y="7" width="79" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.70588235290000001" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="L8I-ja-jgS"/>
                                             <constraint firstAttribute="width" constant="79" id="RA1-D3-iBq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="12"/>
+                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="12"/>
                                         <state key="normal" title="COMMENT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -808,7 +807,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.37647058823529411" green="0.49019607843137253" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -821,11 +820,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera" width="50" height="50"/>
-        <image name="code-icon-logo" width="318" height="281"/>
-        <image name="fb-icon" width="65" height="65"/>
-        <image name="heart-empty" width="150" height="147"/>
-        <image name="profile" width="100" height="104"/>
-        <image name="screen" width="300" height="534"/>
+        <image name="camera" width="1200" height="1200"/>
+        <image name="heart-empty" width="1200" height="1200"/>
+        <image name="thoughts" width="1200" height="1200"/>
     </resources>
 </document>

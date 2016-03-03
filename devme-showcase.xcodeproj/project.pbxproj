@@ -32,6 +32,10 @@
 		06C611611C57CE8600A2573F /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C611601C57CE8600A2573F /* FeedVC.swift */; };
 		06CB88791C56760E008534A5 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB88781C56760E008534A5 /* DataService.swift */; };
 		06DE9AD51C7E0CDA006623BF /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DE9AD41C7E0CDA006623BF /* DetailVC.swift */; };
+		06F8347D1C88ABDB005C1EA6 /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06F834791C88ABDB005C1EA6 /* CaviarDreams_Bold.ttf */; };
+		06F8347E1C88ABDB005C1EA6 /* CaviarDreams.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06F8347A1C88ABDB005C1EA6 /* CaviarDreams.ttf */; };
+		06F8347F1C88ABDB005C1EA6 /* CaviarDreams_BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06F8347B1C88ABDB005C1EA6 /* CaviarDreams_BoldItalic.ttf */; };
+		06F834801C88ABDB005C1EA6 /* CaviarDreams_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06F8347C1C88ABDB005C1EA6 /* CaviarDreams_Italic.ttf */; };
 		D0EDAAEA74217AC9103C2DDF /* Pods_devme_showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8C1998D7A8DE838D9C887A3 /* Pods_devme_showcase.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +88,10 @@
 		06C611601C57CE8600A2573F /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		06CB88781C56760E008534A5 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		06DE9AD41C7E0CDA006623BF /* DetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		06F834791C88ABDB005C1EA6 /* CaviarDreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_Bold.ttf; sourceTree = "<group>"; };
+		06F8347A1C88ABDB005C1EA6 /* CaviarDreams.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams.ttf; sourceTree = "<group>"; };
+		06F8347B1C88ABDB005C1EA6 /* CaviarDreams_BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_BoldItalic.ttf; sourceTree = "<group>"; };
+		06F8347C1C88ABDB005C1EA6 /* CaviarDreams_Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CaviarDreams_Italic.ttf; sourceTree = "<group>"; };
 		65368A7E4EA759980853D8D8 /* Pods-devme-showcase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devme-showcase.release.xcconfig"; path = "Pods/Target Support Files/Pods-devme-showcase/Pods-devme-showcase.release.xcconfig"; sourceTree = "<group>"; };
 		B89F4E9C2038365C5F927004 /* Pods-devme-showcase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devme-showcase.debug.xcconfig"; path = "Pods/Target Support Files/Pods-devme-showcase/Pods-devme-showcase.debug.xcconfig"; sourceTree = "<group>"; };
 		D8C1998D7A8DE838D9C887A3 /* Pods_devme_showcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_devme_showcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +223,10 @@
 				0674AB2F1C53FC94002A7E4F /* NotoSans-BoldItalic.ttf */,
 				0674AB301C53FC94002A7E4F /* NotoSans-Italic.ttf */,
 				0674AB311C53FC94002A7E4F /* NotoSans-Regular.ttf */,
+				06F834791C88ABDB005C1EA6 /* CaviarDreams_Bold.ttf */,
+				06F8347A1C88ABDB005C1EA6 /* CaviarDreams.ttf */,
+				06F8347B1C88ABDB005C1EA6 /* CaviarDreams_BoldItalic.ttf */,
+				06F8347C1C88ABDB005C1EA6 /* CaviarDreams_Italic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -374,7 +386,11 @@
 			files = (
 				0674AB321C53FC94002A7E4F /* NotoSans-Bold.ttf in Resources */,
 				0674AB021C53FBAD002A7E4F /* LaunchScreen.storyboard in Resources */,
+				06F8347E1C88ABDB005C1EA6 /* CaviarDreams.ttf in Resources */,
+				06F8347F1C88ABDB005C1EA6 /* CaviarDreams_BoldItalic.ttf in Resources */,
 				0674AB331C53FC94002A7E4F /* NotoSans-BoldItalic.ttf in Resources */,
+				06F8347D1C88ABDB005C1EA6 /* CaviarDreams_Bold.ttf in Resources */,
+				06F834801C88ABDB005C1EA6 /* CaviarDreams_Italic.ttf in Resources */,
 				0674AB341C53FC94002A7E4F /* NotoSans-Italic.ttf in Resources */,
 				0674AAFF1C53FBAD002A7E4F /* Assets.xcassets in Resources */,
 				0674AAFD1C53FBAD002A7E4F /* Main.storyboard in Resources */,
