@@ -89,7 +89,7 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb-icon" translatesAutoresizingMaskIntoConstraints="NO" id="6Sv-Oa-94R">
                                                 <rect key="frame" x="0.0" y="22" width="65" height="65"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-oV-aPe" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-oV-aPe" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
                                                 <rect key="frame" x="105" y="38" width="439" height="33"/>
                                                 <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
@@ -662,38 +662,38 @@
                                     <constraint firstItem="8oj-V3-lDP" firstAttribute="top" secondItem="WAS-Um-cqk" secondAttribute="top" constant="8" id="zRV-4v-X2b"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lgX-7s-7BF">
-                                <rect key="frame" x="20" y="250" width="560" height="342"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="69" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lgX-7s-7BF">
+                                <rect key="frame" x="20" y="250" width="560" height="296"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="100" id="E4A-vx-0UM" customClass="CommentCell" customModule="devme_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="560" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="69" id="E4A-vx-0UM" customClass="CommentCell" customModule="devme_showcase" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E4A-vx-0UM" id="SQ4-I1-pkA">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="68"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="demonslayer31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SQz-Wp-Fcp">
-                                                    <rect key="frame" x="8" y="8" width="473" height="24"/>
-                                                    <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="8" width="473" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="10"/>
                                                     <color key="textColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3kB-wp-4p4">
-                                                    <rect key="frame" x="8" y="40" width="544" height="51"/>
+                                                    <rect key="frame" x="8" y="30" width="544" height="38"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="10"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqj-R6-ErN" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
-                                                    <rect key="frame" x="489" y="8" width="63" height="24"/>
+                                                    <rect key="frame" x="489" y="4" width="63" height="18"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="63" id="e6k-Zk-6Sx"/>
-                                                        <constraint firstAttribute="height" constant="24" id="yr4-xI-r8Q"/>
+                                                        <constraint firstAttribute="height" constant="18" id="yr4-xI-r8Q"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="10"/>
                                                     <state key="normal" title="Delete">
                                                         <color key="titleColor" red="0.95686274510000002" green="0.31764705879999999" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -710,8 +710,8 @@
                                                 <constraint firstItem="3kB-wp-4p4" firstAttribute="top" secondItem="SQz-Wp-Fcp" secondAttribute="bottom" constant="8" id="Xtg-gw-Q8S"/>
                                                 <constraint firstItem="uqj-R6-ErN" firstAttribute="trailing" secondItem="SQ4-I1-pkA" secondAttribute="trailingMargin" id="aKp-GG-zBe"/>
                                                 <constraint firstItem="3kB-wp-4p4" firstAttribute="leading" secondItem="SQ4-I1-pkA" secondAttribute="leadingMargin" id="hAd-YU-igi"/>
-                                                <constraint firstItem="uqj-R6-ErN" firstAttribute="top" secondItem="SQ4-I1-pkA" secondAttribute="topMargin" id="tvD-l7-oiT"/>
-                                                <constraint firstItem="3kB-wp-4p4" firstAttribute="bottom" secondItem="SQ4-I1-pkA" secondAttribute="bottomMargin" id="wSW-z4-Stf"/>
+                                                <constraint firstItem="uqj-R6-ErN" firstAttribute="top" secondItem="SQ4-I1-pkA" secondAttribute="topMargin" constant="-4" id="tvD-l7-oiT"/>
+                                                <constraint firstItem="3kB-wp-4p4" firstAttribute="bottom" secondItem="SQ4-I1-pkA" secondAttribute="bottomMargin" constant="8" id="wSW-z4-Stf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -741,7 +741,7 @@
                                             <constraint firstAttribute="height" constant="30" id="L8I-ja-jgS"/>
                                             <constraint firstAttribute="width" constant="79" id="RA1-D3-iBq"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="NotoSans-Bold" family="Noto Sans" pointSize="12"/>
                                         <state key="normal" title="COMMENT">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -770,7 +770,7 @@
                             <constraint firstItem="WAS-Um-cqk" firstAttribute="leading" secondItem="XRn-te-nRo" secondAttribute="leadingMargin" id="C3E-jl-YjM"/>
                             <constraint firstItem="lgX-7s-7BF" firstAttribute="trailing" secondItem="XRn-te-nRo" secondAttribute="trailingMargin" id="KHB-i4-Gb0"/>
                             <constraint firstItem="lgX-7s-7BF" firstAttribute="top" secondItem="7J4-wh-vT1" secondAttribute="bottom" constant="8" id="QtG-jo-pof"/>
-                            <constraint firstItem="rdt-he-XtS" firstAttribute="top" secondItem="lgX-7s-7BF" secondAttribute="bottom" constant="-46" id="V8o-38-rT2"/>
+                            <constraint firstItem="rdt-he-XtS" firstAttribute="top" secondItem="lgX-7s-7BF" secondAttribute="bottom" id="V8o-38-rT2"/>
                             <constraint firstItem="7J4-wh-vT1" firstAttribute="leading" secondItem="XRn-te-nRo" secondAttribute="leadingMargin" id="Yi0-4t-ED7"/>
                             <constraint firstItem="WAS-Um-cqk" firstAttribute="trailing" secondItem="XRn-te-nRo" secondAttribute="trailingMargin" id="ZTZ-v5-rU0"/>
                             <constraint firstItem="rdt-he-XtS" firstAttribute="trailing" secondItem="XRn-te-nRo" secondAttribute="trailingMargin" id="dV2-Xn-WOk"/>

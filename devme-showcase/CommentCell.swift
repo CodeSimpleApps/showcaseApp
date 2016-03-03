@@ -17,29 +17,24 @@ class CommentCell: UITableViewCell {
     
     var comment: Comment!
     var post: Post!
-    var userNameRef: Firebase!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func configCell(comment: Comment) {
+    func configCell(comment: Comment, currentPostKey: String, currentUserName: String) {
         
         self.comment = comment
         
-        userNameRef = DataService.ds.REF_COMMENTS.childByAppendingPath(comment.commentKey).childByAppendingPath("username")
-        
-        userNameRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
-            if comment.commentUserName != snapshot.value as? String {
-                self.deleteCommentBtn.hidden = true
-                
-            } else if comment.commentUserName == snapshot.value as? String {
-                self.deleteCommentBtn.hidden = false
-            }
-        })
- 
         userNameLbl.text = comment.commentUserName
         commentTextView.text = comment.commentText
+        
+        if comment.commentUserName != currentUserName {
+            self.deleteCommentBtn.hidden = true
+            
+        }else if comment.commentUserName == currentUserName {
+            self.deleteCommentBtn.hidden = false
+        }
     }
     
     @IBAction func deleteComment() {

@@ -14,6 +14,7 @@ class Comment {
     private var _commentUserName: String!
     private var _commentText: String!
     private var _commentKey: String!
+    private var _currentPostKey: String!
     private var _commentRef: Firebase!
     
     var commentUserName: String {
@@ -32,13 +33,18 @@ class Comment {
         return _commentRef
     }
     
+    var currentPostKey: String {
+        return _currentPostKey
+    }
+    
     init(user: String, comment: String) {
         self._commentUserName = user
         self._commentText = comment
     }
     
-    init(commentKey: String, dict: Dictionary <String, AnyObject>) {
+    init(currentPostKey: String, commentKey: String, dict: Dictionary <String, AnyObject>) {
         self._commentKey = commentKey
+        self._currentPostKey = currentPostKey
         
         if let userName = dict["username"] as? String {
             self._commentUserName = userName
@@ -48,7 +54,7 @@ class Comment {
             self._commentText = text
         }
         
-        self._commentRef = DataService.ds.REF_COMMENTS.childByAppendingPath(self._commentKey)
+        self._commentRef = DataService.ds.REF_COMMENTS.childByAppendingPath(self._currentPostKey).childByAppendingPath(self._commentKey)
     }
     
     func deleteComment() {
