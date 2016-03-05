@@ -19,6 +19,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     @IBOutlet weak var imgSelector: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var commentTextField: MaterialTextField!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     var post: Post!
     var request: Request?
@@ -102,6 +103,31 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                 DataService.ds.REF_POSTS.childByAppendingPath(self.currentPostKey).childByAppendingPath("comments").childByAppendingPath(key).removeValue()
             }
             self.tableView.reloadData()
+        })
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.bottomConstraint.constant += keyboardFrame.height
+        })
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.1, animations: { () -> Void in
+            self.bottomConstraint.constant -= keyboardFrame.height
         })
     }
     
