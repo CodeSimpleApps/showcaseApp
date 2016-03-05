@@ -82,6 +82,8 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                 self.currentUserImgUrl = userImgUrl
             }
         })
+        
+        tableView.reloadData()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -114,7 +116,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
             }
             
             cell.configCell(post, img: img, profImg: imgP)
-            
+                        
             return cell
             
         } else {
