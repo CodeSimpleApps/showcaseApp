@@ -19,6 +19,8 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var commentTextField: MaterialTextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var editFieldView: MaterialView!
+    @IBOutlet weak var editBtn: MaterialButton!
     
     var post: Post!
     var request: Request?
@@ -43,46 +45,60 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             currentPostKey = post.postKey
             
             print("CURRENT POST KEY IS \(currentPostKey)")
-        }
-        
-        DataService.ds.REF_COMMENTS.childByAppendingPath(currentPostKey).observeEventType(.Value, withBlock: { snapshot in
             
-            print("THIS IS SNAPSHOT FOR COMMENTS IN POST \(snapshot.value)")
-            
-            self.comments = []
-            
-            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+            DataService.ds.REF_COMMENTS.childByAppendingPath(currentPostKey).observeEventType(.Value, withBlock: { snapshot in
                 
-                for snap in snapshots {
-                    if let commentDict = snap.value as? Dictionary <String, AnyObject> {
-                        let key = snap.key
-                        let specificComment = Comment(currentPostKey: self.currentPostKey, commentKey: key, dict: commentDict)
-                        
-                        self.comments.insert(specificComment, atIndex: 0)
+                print("THIS IS SNAPSHOT FOR COMMENTS IN POST \(snapshot.value)")
+                
+                self.comments = []
+                
+                if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                    
+                    for snap in snapshots {
+                        if let commentDict = snap.value as? Dictionary <String, AnyObject> {
+                            let key = snap.key
+                            let specificComment = Comment(currentPostKey: self.currentPostKey, commentKey: key, dict: commentDict)
+                            
+                            self.comments.insert(specificComment, atIndex: 0)
+                        }
+                        self.tableView.reloadData()
                     }
-                    self.tableView.reloadData()
                 }
-            }
-        })
-        
-        if DataService.ds.REF_USER_CURRENT.authData != nil {
-            
-            DataService.ds.REF_USER_CURRENT.observeEventType(.Value, withBlock: { snapshot in
-                let currentUser = snapshot.value.objectForKey("username") as? String
-                
-                print("CURRENT USER IN DETAIL VC: \(currentUser)")
-                self.currentUser = currentUser!
             })
-        } else {
-            currentUser = "EMPTY"
-        }
-        
-        DataService.ds.REF_COMMENTS.observeEventType(.ChildRemoved, withBlock: { snapshot in
-            if let key = snapshot.key {
-                DataService.ds.REF_POSTS.childByAppendingPath(self.currentPostKey).childByAppendingPath("comments").childByAppendingPath(key).removeValue()
+            
+            if DataService.ds.REF_USER_CURRENT.authData != nil {
+                
+                DataService.ds.REF_USER_CURRENT.observeEventType(.Value, withBlock: { snapshot in
+                    let currentUser = snapshot.value.objectForKey("username") as? String
+                    
+                    print("CURRENT USER IN DETAIL VC: \(currentUser)")
+                    self.currentUser = currentUser!
+                    
+                    if currentUser != post.userName {
+                        self.editFieldView.hidden = true
+                        self.detailTextField.hidden = true
+                        self.imgSelector.hidden = true
+                        self.editBtn.hidden = true
+                        
+                    } else if currentUser == post.userName {
+                        self.editFieldView.hidden = false
+                        self.detailTextField.hidden = false
+                        self.imgSelector.hidden = false
+                        self.editBtn.hidden = false
+                    }
+                })
+                
+            } else {
+                currentUser = "EMPTY"
             }
-            self.tableView.reloadData()
-        })
+            
+            DataService.ds.REF_COMMENTS.observeEventType(.ChildRemoved, withBlock: { snapshot in
+                if let key = snapshot.key {
+                    DataService.ds.REF_POSTS.childByAppendingPath(self.currentPostKey).childByAppendingPath("comments").childByAppendingPath(key).removeValue()
+                }
+                self.tableView.reloadData()
+            })
+        }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)

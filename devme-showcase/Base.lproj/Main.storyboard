@@ -548,10 +548,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7J4-wh-vT1" customClass="MaterialView" customModule="devme_showcase" customModuleProvider="target">
-                                <rect key="frame" x="20" y="126" width="560" height="79"/>
+                                <rect key="frame" x="20" y="72" width="560" height="133"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRl-4h-RfB">
-                                        <rect key="frame" x="8" y="8" width="544" height="63"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRl-4h-RfB">
+                                        <rect key="frame" x="8" y="62" width="544" height="63"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="16"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -559,11 +559,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="PRl-4h-RfB" secondAttribute="bottom" constant="8" id="FTJ-Xa-m52"/>
-                                    <constraint firstAttribute="trailing" secondItem="PRl-4h-RfB" secondAttribute="trailing" constant="8" id="OOw-oo-1TE"/>
-                                    <constraint firstItem="PRl-4h-RfB" firstAttribute="leading" secondItem="7J4-wh-vT1" secondAttribute="leading" constant="8" id="OtY-UB-Hu2"/>
-                                    <constraint firstItem="PRl-4h-RfB" firstAttribute="top" secondItem="7J4-wh-vT1" secondAttribute="top" constant="8" id="eMn-iE-9Ut"/>
-                                    <constraint firstAttribute="height" constant="79" id="pNm-zw-b2Q"/>
+                                    <constraint firstAttribute="height" constant="133" id="FxQ-TL-UzH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAS-Um-cqk" customClass="MaterialView" customModule="devme_showcase" customModuleProvider="target">
@@ -723,18 +719,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="7J4-wh-vT1" firstAttribute="trailing" secondItem="XRn-te-nRo" secondAttribute="trailingMargin" id="6fM-EC-nVY"/>
-                            <constraint firstItem="7J4-wh-vT1" firstAttribute="top" secondItem="WAS-Um-cqk" secondAttribute="bottom" constant="8" id="6nT-14-Y73"/>
                             <constraint firstItem="WAS-Um-cqk" firstAttribute="leading" secondItem="XRn-te-nRo" secondAttribute="leadingMargin" id="C3E-jl-YjM"/>
                             <constraint firstItem="lgX-7s-7BF" firstAttribute="trailing" secondItem="XRn-te-nRo" secondAttribute="trailingMargin" id="KHB-i4-Gb0"/>
-                            <constraint firstItem="lgX-7s-7BF" firstAttribute="top" secondItem="7J4-wh-vT1" secondAttribute="bottom" constant="8" id="QtG-jo-pof"/>
+                            <constraint firstItem="7J4-wh-vT1" firstAttribute="leading" secondItem="XRn-te-nRo" secondAttribute="leadingMargin" id="MGn-fd-9at"/>
                             <constraint firstItem="rdt-he-XtS" firstAttribute="top" secondItem="lgX-7s-7BF" secondAttribute="bottom" id="V8o-38-rT2"/>
-                            <constraint firstItem="7J4-wh-vT1" firstAttribute="leading" secondItem="XRn-te-nRo" secondAttribute="leadingMargin" id="Yi0-4t-ED7"/>
                             <constraint firstItem="WAS-Um-cqk" firstAttribute="trailing" secondItem="XRn-te-nRo" secondAttribute="trailingMargin" id="ZTZ-v5-rU0"/>
+                            <constraint firstItem="7J4-wh-vT1" firstAttribute="top" secondItem="IuS-4n-sYJ" secondAttribute="bottom" constant="8" id="aBj-hw-wSN"/>
                             <constraint firstItem="rdt-he-XtS" firstAttribute="trailing" secondItem="XRn-te-nRo" secondAttribute="trailingMargin" id="dV2-Xn-WOk"/>
                             <constraint firstItem="b6Q-5c-HXZ" firstAttribute="top" secondItem="rdt-he-XtS" secondAttribute="bottom" constant="8" id="ht4-Dg-ajc"/>
+                            <constraint firstItem="lgX-7s-7BF" firstAttribute="top" secondItem="7J4-wh-vT1" secondAttribute="bottom" constant="8" id="ju4-c4-did"/>
                             <constraint firstItem="rdt-he-XtS" firstAttribute="leading" secondItem="XRn-te-nRo" secondAttribute="leadingMargin" id="myG-wW-8nA"/>
                             <constraint firstItem="WAS-Um-cqk" firstAttribute="top" secondItem="IuS-4n-sYJ" secondAttribute="bottom" constant="8" id="njX-T4-Po4"/>
+                            <constraint firstItem="7J4-wh-vT1" firstAttribute="trailing" secondItem="XRn-te-nRo" secondAttribute="trailingMargin" id="vDR-ta-wLg"/>
                             <constraint firstItem="lgX-7s-7BF" firstAttribute="leading" secondItem="XRn-te-nRo" secondAttribute="leadingMargin" id="w4Z-jJ-mfa"/>
                         </constraints>
                     </view>
@@ -744,6 +740,8 @@
                         <outlet property="detailShowcaseLbl" destination="PRl-4h-RfB" id="knp-To-Tn3"/>
                         <outlet property="detailTextField" destination="8Mq-b6-ocS" id="nT9-nd-M2H"/>
                         <outlet property="detailView" destination="7J4-wh-vT1" id="tXc-xM-BBo"/>
+                        <outlet property="editBtn" destination="8oj-V3-lDP" id="RY4-z3-Vjz"/>
+                        <outlet property="editFieldView" destination="WAS-Um-cqk" id="Fa8-kg-Lgd"/>
                         <outlet property="imgSelector" destination="tE6-OU-GNH" id="HGt-nD-Pob"/>
                         <outlet property="tableView" destination="lgX-7s-7BF" id="FcD-kL-Ty7"/>
                     </connections>
