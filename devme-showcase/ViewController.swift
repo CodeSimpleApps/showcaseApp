@@ -22,9 +22,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var profileSettingsLbl: UILabel!
     @IBOutlet weak var profilePickLbl: UILabel!
     @IBOutlet weak var signupBtn: MaterialButton!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bottomConstraint2: NSLayoutConstraint!
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var facebookBtn: MaterialButton!
+    @IBOutlet weak var accountExist: MaterialButton!
 
     var imagePicker: UIImagePickerController!
     
@@ -35,35 +34,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
-    }
-    
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self);
-    }
-    
-    func keyboardWillShow(notification: NSNotification) {
-        var info = notification.userInfo!
-        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.bottomConstraint.constant += keyboardFrame.height
-            self.bottomConstraint2.constant -= keyboardFrame.height
-            self.topConstraint.constant -= keyboardFrame.height
-        })
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        var info = notification.userInfo!
-        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
-        
-        UIView.animateWithDuration(0.1, animations: { () -> Void in
-            self.bottomConstraint.constant -= keyboardFrame.height
-            self.bottomConstraint2.constant += keyboardFrame.height
-            self.topConstraint.constant += keyboardFrame.height
-        })
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -129,12 +99,30 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBAction func createUserBtnPressed(sender: AnyObject) {
         loginBtn.hidden = true
+        facebookBtn.hidden = true
         createUserBtn.hidden = true
         profilePickLbl.hidden = false
         profileSettingsLbl.hidden = false
         nickNameField.hidden = false
         userImg.hidden = false
         signupBtn.hidden = false
+        accountExist.hidden = false
+    }
+    
+    @IBAction func accountExistBtnPressed(sender: AnyObject) {
+        prepareForLogin()
+    }
+    
+    func prepareForLogin() {
+        loginBtn.hidden = false
+        facebookBtn.hidden = false
+        createUserBtn.hidden = false
+        profilePickLbl.hidden = true
+        profileSettingsLbl.hidden = true
+        nickNameField.hidden = true
+        userImg.hidden = true
+        signupBtn.hidden = true
+        accountExist.hidden = true
     }
     
     @IBAction func attemptLogin(sender: UIButton) {
@@ -211,13 +199,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                                         self.passwordField.text = ""
                                                         self.nickNameField.text = ""
                                                         
-                                                        self.loginBtn.hidden = false
-                                                        self.createUserBtn.hidden = false
-                                                        self.profilePickLbl.hidden = true
-                                                        self.profileSettingsLbl.hidden = true
-                                                        self.nickNameField.hidden = true
-                                                        self.userImg.hidden = true
-                                                        self.signupBtn.hidden = true
+                                                        self.prepareForLogin()
                                                     }
                                                 }
                                             }

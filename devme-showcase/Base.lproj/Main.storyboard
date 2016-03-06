@@ -35,6 +35,7 @@
             <string>CaviarDreams-Bold</string>
             <string>CaviarDreams-Bold</string>
             <string>CaviarDreams-Bold</string>
+            <string>CaviarDreams-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -80,40 +81,14 @@
                                     <constraint firstItem="Y9G-J9-CDj" firstAttribute="top" secondItem="cCR-mH-m6i" secondAttribute="top" constant="25" id="wGj-QC-60d"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vu6-yZ-o8B" customClass="MaterialView" customModule="devme_showcase" customModuleProvider="target">
-                                <rect key="frame" x="20" y="67" width="560" height="128"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-oV-aPe" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="194" y="47" width="173" height="33"/>
-                                        <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="33" id="gmG-sl-N24"/>
-                                            <constraint firstAttribute="width" constant="173" id="hb3-lZ-imt"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
-                                        <state key="normal" title="FACEBOOK LOGIN">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="fbBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8wB-f1-FuU"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="Mtd-oV-aPe" firstAttribute="centerY" secondItem="vu6-yZ-o8B" secondAttribute="centerY" id="MN6-L0-Wqj"/>
-                                    <constraint firstAttribute="height" constant="128" id="mUM-Bs-foy"/>
-                                    <constraint firstItem="Mtd-oV-aPe" firstAttribute="centerX" secondItem="vu6-yZ-o8B" secondAttribute="centerX" id="p9s-CO-ryv"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cnW-aX-c3g" customClass="MaterialView" customModule="devme_showcase" customModuleProvider="target">
-                                <rect key="frame" x="20" y="203" width="560" height="377"/>
+                                <rect key="frame" x="20" y="67" width="560" height="513"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Login / Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYJ-5c-E3F">
-                                        <rect key="frame" x="20" y="8" width="179" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Login / Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYJ-5c-E3F">
+                                        <rect key="frame" x="191" y="8" width="179" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="YiB-u2-fbe"/>
-                                            <constraint firstAttribute="width" constant="179" id="gb6-6c-J8L"/>
+                                            <constraint firstAttribute="height" constant="24" id="10V-GV-fAY"/>
+                                            <constraint firstAttribute="width" constant="179" id="ECn-sz-cI1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -123,7 +98,7 @@
                                         <rect key="frame" x="20" y="40" width="520" height="35"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="bzA-M9-cvH"/>
+                                            <constraint firstAttribute="height" constant="35" id="rSi-Jw-O0X"/>
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="17"/>
@@ -133,18 +108,18 @@
                                         <rect key="frame" x="20" y="83" width="520" height="35"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="9RP-TO-LCx"/>
+                                            <constraint firstAttribute="height" constant="35" id="YcL-vl-Jtp"/>
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ol-Ub-izu" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="194" y="336" width="173" height="33"/>
+                                        <rect key="frame" x="194" y="404" width="173" height="33"/>
                                         <color key="backgroundColor" red="0.47058823529411764" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="33" id="1IO-lu-lGd"/>
-                                            <constraint firstAttribute="width" constant="173" id="Ekp-QA-AiV"/>
+                                            <constraint firstAttribute="width" constant="173" id="4LA-hM-IsX"/>
+                                            <constraint firstAttribute="height" constant="33" id="qpy-UA-vtB"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
                                         <state key="normal" title="Sign Up">
@@ -154,37 +129,37 @@
                                             <action selector="attemptSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wea-Dr-0KL"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayU-f3-GfT" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="194" y="126" width="173" height="33"/>
-                                        <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="33" id="R91-1F-Wnl"/>
-                                            <constraint firstAttribute="width" constant="173" id="Yqe-6C-PI5"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
-                                        <state key="normal" title="Login">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="attemptLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cud-yp-LC8"/>
-                                        </connections>
-                                    </button>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter a nickname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BOD-dr-UtI" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="235" width="520" height="35"/>
+                                        <rect key="frame" x="20" y="240" width="520" height="35"/>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="wXh-Pa-Otp"/>
+                                            <constraint firstAttribute="height" constant="35" id="mgi-Bp-Et6"/>
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                     </textField>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gU-gp-3nP" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
+                                        <rect key="frame" x="197" y="167" width="167" height="34"/>
+                                        <color key="backgroundColor" red="0.47058823529999999" green="0.56470588239999997" blue="0.61176470589999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="167" id="Nei-Rx-CnQ"/>
+                                            <constraint firstAttribute="height" constant="34" id="dLY-Ja-GYe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
+                                        <state key="normal" title="Have an account?">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="accountExistBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uzp-90-fdr"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjf-uo-esP" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
-                                        <rect key="frame" x="194" y="167" width="173" height="33"/>
+                                        <rect key="frame" x="215" y="167" width="130" height="33"/>
                                         <color key="backgroundColor" red="0.47058823529411764" green="0.56470588235294117" blue="0.61176470588235299" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="33" id="HW9-DW-964"/>
-                                            <constraint firstAttribute="width" constant="173" id="Mvb-WY-T4Z"/>
+                                            <constraint firstAttribute="width" constant="130" id="9Yf-5u-Sax"/>
+                                            <constraint firstAttribute="height" constant="33" id="CzP-DM-iCq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
                                         <state key="normal" title="Create User">
@@ -194,64 +169,94 @@
                                             <action selector="createUserBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dal-hO-RDu"/>
                                         </connections>
                                     </button>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a profile pick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2n-wr-hQE">
-                                        <rect key="frame" x="20" y="291" width="179" height="24"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set a profile pick" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2n-wr-hQE">
+                                        <rect key="frame" x="191" y="283" width="179" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="179" id="7Pm-dR-eJw"/>
-                                            <constraint firstAttribute="height" constant="24" id="uJF-cA-I8h"/>
+                                            <constraint firstAttribute="height" constant="24" id="KAK-2Y-27E"/>
+                                            <constraint firstAttribute="width" constant="179" id="f9F-bS-dtC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-Bq-EGb">
-                                        <rect key="frame" x="20" y="203" width="179" height="24"/>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYG-Bq-EGb">
+                                        <rect key="frame" x="191" y="208" width="179" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="24" id="PAx-UN-sve"/>
-                                            <constraint firstAttribute="width" constant="179" id="lvA-PI-nOA"/>
+                                            <constraint firstAttribute="height" constant="24" id="2DY-ma-IDp"/>
+                                            <constraint firstAttribute="width" constant="179" id="9h7-cV-4XX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="VJo-nd-XnJ">
-                                        <rect key="frame" x="510" y="288" width="30" height="30"/>
+                                        <rect key="frame" x="255" y="315" width="50" height="50"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="9AU-yb-wUF"/>
-                                            <constraint firstAttribute="height" constant="30" id="Jg8-xg-q5c"/>
+                                            <constraint firstAttribute="width" constant="50" id="Lfi-MP-Kcn"/>
+                                            <constraint firstAttribute="height" constant="50" id="OF7-aB-fqq"/>
                                         </constraints>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="BR3-i7-bWv" appends="YES" id="dxo-Ah-DxP"/>
                                         </connections>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="42G-ai-j6Y">
+                                        <rect key="frame" x="20" y="125" width="520" height="34"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mtd-oV-aPe" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="255" height="34"/>
+                                                <color key="backgroundColor" red="0.11764705882352941" green="0.53333333333333333" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
+                                                <state key="normal" title="FB Login">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fbBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8wB-f1-FuU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayU-f3-GfT" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
+                                                <rect key="frame" x="265" y="0.0" width="255" height="34"/>
+                                                <color key="backgroundColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="attemptLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cud-yp-LC8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="w2n-wr-hQE" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="0xb-BQ-DPa"/>
-                                    <constraint firstItem="apJ-MX-dD8" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="2Pb-ke-LkC"/>
-                                    <constraint firstItem="apJ-MX-dD8" firstAttribute="top" secondItem="Tpo-b7-gUg" secondAttribute="bottom" constant="8" id="370-Fc-dOO"/>
-                                    <constraint firstItem="vYJ-5c-E3F" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="5cb-4J-78g"/>
-                                    <constraint firstItem="Cjf-uo-esP" firstAttribute="top" secondItem="ayU-f3-GfT" secondAttribute="bottom" constant="8" id="76U-v9-631"/>
-                                    <constraint firstItem="BOD-dr-UtI" firstAttribute="top" secondItem="eYG-Bq-EGb" secondAttribute="bottom" constant="8" id="BT3-AZ-cbf"/>
-                                    <constraint firstItem="eYG-Bq-EGb" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="Kjf-Dh-9wq"/>
-                                    <constraint firstItem="BOD-dr-UtI" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="Mqt-qi-CwV"/>
-                                    <constraint firstAttribute="trailing" secondItem="BOD-dr-UtI" secondAttribute="trailing" constant="20" id="OXp-sz-krP"/>
-                                    <constraint firstItem="1ol-Ub-izu" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="TVZ-yB-8u6"/>
-                                    <constraint firstItem="1ol-Ub-izu" firstAttribute="top" secondItem="w2n-wr-hQE" secondAttribute="bottom" constant="21" id="VwK-yI-N6B"/>
-                                    <constraint firstAttribute="bottom" secondItem="VJo-nd-XnJ" secondAttribute="bottom" constant="59" id="Zgl-WM-3sk"/>
-                                    <constraint firstItem="Tpo-b7-gUg" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="bLY-Dj-0hr"/>
-                                    <constraint firstItem="Cjf-uo-esP" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="cLy-4W-7Cr"/>
-                                    <constraint firstItem="Tpo-b7-gUg" firstAttribute="top" secondItem="vYJ-5c-E3F" secondAttribute="bottom" constant="8" id="dg9-u2-DuA"/>
-                                    <constraint firstItem="VJo-nd-XnJ" firstAttribute="top" secondItem="BOD-dr-UtI" secondAttribute="bottom" constant="18" id="dxp-DP-Zlf"/>
-                                    <constraint firstAttribute="trailing" secondItem="VJo-nd-XnJ" secondAttribute="trailing" constant="20" id="e24-js-9MR"/>
+                                    <constraint firstItem="42G-ai-j6Y" firstAttribute="top" secondItem="apJ-MX-dD8" secondAttribute="bottom" constant="7" id="2Ck-n2-h5t"/>
+                                    <constraint firstAttribute="trailing" secondItem="apJ-MX-dD8" secondAttribute="trailing" constant="20" id="3S8-Xk-nH4"/>
+                                    <constraint firstItem="42G-ai-j6Y" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="52k-qM-8pa"/>
+                                    <constraint firstItem="w2n-wr-hQE" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" constant="0.5" id="7wA-6c-kmT"/>
+                                    <constraint firstItem="w2n-wr-hQE" firstAttribute="top" secondItem="BOD-dr-UtI" secondAttribute="bottom" constant="8" id="Daq-12-Xfa"/>
+                                    <constraint firstItem="vYJ-5c-E3F" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="Ec2-GH-dcg"/>
+                                    <constraint firstItem="VJo-nd-XnJ" firstAttribute="top" secondItem="w2n-wr-hQE" secondAttribute="bottom" constant="8" id="FCm-qa-ol4"/>
+                                    <constraint firstItem="apJ-MX-dD8" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="HTB-J3-8os"/>
+                                    <constraint firstAttribute="trailing" secondItem="42G-ai-j6Y" secondAttribute="trailing" constant="20" id="HcL-dS-N4R"/>
+                                    <constraint firstItem="eYG-Bq-EGb" firstAttribute="top" secondItem="Cjf-uo-esP" secondAttribute="bottom" constant="8" id="HnK-Fu-hfw"/>
+                                    <constraint firstItem="VJo-nd-XnJ" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="JhJ-Pr-cOE"/>
+                                    <constraint firstItem="1ol-Ub-izu" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="L09-A8-BfT"/>
+                                    <constraint firstItem="7gU-gp-3nP" firstAttribute="top" secondItem="42G-ai-j6Y" secondAttribute="bottom" constant="8" id="RcN-Fp-FWT"/>
+                                    <constraint firstItem="Tpo-b7-gUg" firstAttribute="top" secondItem="vYJ-5c-E3F" secondAttribute="bottom" constant="8" id="SdA-Z1-lT7"/>
+                                    <constraint firstAttribute="trailing" secondItem="BOD-dr-UtI" secondAttribute="trailing" constant="20" id="StT-zE-afC"/>
+                                    <constraint firstItem="Cjf-uo-esP" firstAttribute="top" secondItem="42G-ai-j6Y" secondAttribute="bottom" constant="8" id="Zl8-F3-bRx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tpo-b7-gUg" secondAttribute="trailing" constant="20" id="a6Q-0E-Adh"/>
+                                    <constraint firstItem="Tpo-b7-gUg" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="aVu-fE-7wC"/>
+                                    <constraint firstItem="1ol-Ub-izu" firstAttribute="top" secondItem="VJo-nd-XnJ" secondAttribute="bottom" constant="39" id="byZ-sw-k0H"/>
                                     <constraint firstAttribute="height" constant="128" id="eZr-Ce-d9p"/>
-                                    <constraint firstItem="ayU-f3-GfT" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="gqu-Lo-h4V"/>
-                                    <constraint firstAttribute="trailing" secondItem="apJ-MX-dD8" secondAttribute="trailing" constant="20" id="idz-46-xKd"/>
-                                    <constraint firstItem="ayU-f3-GfT" firstAttribute="top" secondItem="apJ-MX-dD8" secondAttribute="bottom" constant="8" id="q27-vF-bS5"/>
-                                    <constraint firstItem="vYJ-5c-E3F" firstAttribute="top" secondItem="cnW-aX-c3g" secondAttribute="top" constant="8" id="x5y-Jy-uu2"/>
-                                    <constraint firstAttribute="trailing" secondItem="Tpo-b7-gUg" secondAttribute="trailing" constant="20" id="xkd-jN-Qfh"/>
-                                    <constraint firstAttribute="bottom" secondItem="1ol-Ub-izu" secondAttribute="bottom" constant="8" id="yBH-rN-TIL"/>
+                                    <constraint firstItem="BOD-dr-UtI" firstAttribute="leading" secondItem="cnW-aX-c3g" secondAttribute="leading" constant="20" id="ebZ-ma-ooK"/>
+                                    <constraint firstItem="vYJ-5c-E3F" firstAttribute="top" secondItem="cnW-aX-c3g" secondAttribute="top" constant="8" id="h8N-0r-iaG"/>
+                                    <constraint firstItem="Cjf-uo-esP" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="mVW-ZB-Z9S"/>
+                                    <constraint firstItem="eYG-Bq-EGb" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="ofx-M0-Co6"/>
+                                    <constraint firstItem="apJ-MX-dD8" firstAttribute="top" secondItem="Tpo-b7-gUg" secondAttribute="bottom" constant="8" id="tuA-Zu-geO"/>
+                                    <constraint firstItem="7gU-gp-3nP" firstAttribute="centerX" secondItem="cnW-aX-c3g" secondAttribute="centerX" id="vCM-t9-Gya"/>
+                                    <constraint firstItem="BOD-dr-UtI" firstAttribute="top" secondItem="eYG-Bq-EGb" secondAttribute="bottom" constant="8" id="zgJ-KB-TJe"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -260,32 +265,28 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vu6-yZ-o8B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="47" id="8d8-Rp-dKX"/>
+                            <constraint firstItem="cnW-aX-c3g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="47" id="6by-an-pmz"/>
+                            <constraint firstItem="cnW-aX-c3g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BTg-ha-NNh"/>
                             <constraint firstItem="cCR-mH-m6i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HCC-Gc-NAp"/>
-                            <constraint firstItem="vu6-yZ-o8B" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Hxl-WL-u8p"/>
-                            <constraint firstItem="cnW-aX-c3g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OGR-iz-tvS"/>
                             <constraint firstItem="cCR-mH-m6i" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="YVG-fk-RkR"/>
-                            <constraint firstItem="vu6-yZ-o8B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cpq-6l-1ab"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cnW-aX-c3g" secondAttribute="bottom" constant="20" id="gGi-Op-Lda"/>
+                            <constraint firstItem="cnW-aX-c3g" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="c9u-hD-riu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cnW-aX-c3g" secondAttribute="bottom" constant="20" id="ebp-I8-xbt"/>
                             <constraint firstAttribute="trailing" secondItem="cCR-mH-m6i" secondAttribute="trailing" id="laz-iC-vDf"/>
-                            <constraint firstItem="cnW-aX-c3g" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="srQ-g0-mlN"/>
-                            <constraint firstItem="cnW-aX-c3g" firstAttribute="top" secondItem="vu6-yZ-o8B" secondAttribute="bottom" constant="8" id="zMt-oX-fOh"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bottomConstraint" destination="gGi-Op-Lda" id="ktu-yv-5mh"/>
-                        <outlet property="bottomConstraint2" destination="zMt-oX-fOh" id="XcL-Mn-SE8"/>
+                        <outlet property="accountExist" destination="7gU-gp-3nP" id="hIz-TG-RQM"/>
                         <outlet property="createUserBtn" destination="Cjf-uo-esP" id="LKc-lo-fyO"/>
                         <outlet property="emailField" destination="Tpo-b7-gUg" id="EXn-Qh-wrb"/>
+                        <outlet property="facebookBtn" destination="Mtd-oV-aPe" id="jay-WQ-tGM"/>
                         <outlet property="loginBtn" destination="ayU-f3-GfT" id="La6-1u-HlE"/>
                         <outlet property="nickNameField" destination="BOD-dr-UtI" id="UJq-Iu-3N6"/>
                         <outlet property="passwordField" destination="apJ-MX-dD8" id="L3T-Yz-Nbu"/>
                         <outlet property="profilePickLbl" destination="w2n-wr-hQE" id="pDd-qg-scI"/>
                         <outlet property="profileSettingsLbl" destination="eYG-Bq-EGb" id="SrJ-c5-4JT"/>
                         <outlet property="signupBtn" destination="1ol-Ub-izu" id="OSK-qb-l1p"/>
-                        <outlet property="topConstraint" destination="YVG-fk-RkR" id="Pex-7h-h3N"/>
                         <outlet property="userImg" destination="VJo-nd-XnJ" id="8nO-HA-W0h"/>
                         <segue destination="T9L-ty-jb3" kind="show" identifier="LoggedIn" action="showDetailViewController:sender:" id="Ed1-hV-nB2"/>
                     </connections>
