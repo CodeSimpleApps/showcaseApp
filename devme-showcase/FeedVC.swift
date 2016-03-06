@@ -82,7 +82,9 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                 self.currentUserImgUrl = userImgUrl
             }
         })
-        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         tableView.reloadData()
     }
     
