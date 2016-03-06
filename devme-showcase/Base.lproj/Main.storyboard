@@ -275,6 +275,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="gGi-Op-Lda" id="ktu-yv-5mh"/>
+                        <outlet property="bottomConstraint2" destination="zMt-oX-fOh" id="XcL-Mn-SE8"/>
                         <outlet property="createUserBtn" destination="Cjf-uo-esP" id="LKc-lo-fyO"/>
                         <outlet property="emailField" destination="Tpo-b7-gUg" id="EXn-Qh-wrb"/>
                         <outlet property="loginBtn" destination="ayU-f3-GfT" id="La6-1u-HlE"/>
@@ -283,6 +285,7 @@
                         <outlet property="profilePickLbl" destination="w2n-wr-hQE" id="pDd-qg-scI"/>
                         <outlet property="profileSettingsLbl" destination="eYG-Bq-EGb" id="SrJ-c5-4JT"/>
                         <outlet property="signupBtn" destination="1ol-Ub-izu" id="OSK-qb-l1p"/>
+                        <outlet property="topConstraint" destination="YVG-fk-RkR" id="Pex-7h-h3N"/>
                         <outlet property="userImg" destination="VJo-nd-XnJ" id="8nO-HA-W0h"/>
                         <segue destination="T9L-ty-jb3" kind="show" identifier="LoggedIn" action="showDetailViewController:sender:" id="Ed1-hV-nB2"/>
                     </connections>
@@ -330,9 +333,9 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="demonslayer31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZfX-wt-pbo">
-                                                            <rect key="frame" x="64" y="8" width="100" height="50"/>
+                                                            <rect key="frame" x="64" y="8" width="130" height="50"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="100" id="5Ht-gH-7ZE"/>
+                                                                <constraint firstAttribute="width" constant="130" id="5Ht-gH-7ZE"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
                                                             <color key="textColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>

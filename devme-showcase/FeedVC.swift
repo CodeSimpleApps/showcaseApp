@@ -198,6 +198,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                 self.postToFirebase(nil)
             }
         }
+        postField.resignFirstResponder()
     }
     
     func postToFirebase(imgUrl: String?) {

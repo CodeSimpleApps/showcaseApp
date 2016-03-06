@@ -105,8 +105,8 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             self.tableView.reloadData()
         })
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
     }
     
     deinit {
@@ -115,7 +115,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     func keyboardWillShow(notification: NSNotification) {
         var info = notification.userInfo!
-        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
         UIView.animateWithDuration(0.1, animations: { () -> Void in
             self.bottomConstraint.constant += keyboardFrame.height
@@ -124,7 +124,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     func keyboardWillHide(notification: NSNotification) {
         var info = notification.userInfo!
-        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
         
         UIView.animateWithDuration(0.1, animations: { () -> Void in
             self.bottomConstraint.constant -= keyboardFrame.height
@@ -203,6 +203,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                 }
             }
         }
+        detailTextField.resignFirstResponder()
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
@@ -230,5 +231,6 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             commentTextField.text = ""
             tableView.reloadData()
         }
+        commentTextField.resignFirstResponder()
     }
 }
