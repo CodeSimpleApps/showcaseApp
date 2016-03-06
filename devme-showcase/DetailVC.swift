@@ -12,7 +12,6 @@ import Firebase
 
 class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var detailShowcaseImg: UIImageView!
     @IBOutlet weak var detailShowcaseLbl: UILabel!
     @IBOutlet weak var detailView: MaterialView!
     @IBOutlet weak var detailTextField: MaterialTextField!
@@ -44,26 +43,6 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             currentPostKey = post.postKey
             
             print("CURRENT POST KEY IS \(currentPostKey)")
-            
-            var detailImg: UIImage?
-            
-            if post.imageUrl != nil {
-                if detailImg != nil {
-                    self.detailShowcaseImg.image = detailImg
-                    
-                } else {
-                    request = Alamofire.request(.GET, post.imageUrl!).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, err in
-                        
-                        if err == nil {
-                            let img = UIImage(data: data!)!
-                            self.detailShowcaseImg.image = img
-                        }
-                    })
-                }
-                
-            } else {
-                self.detailShowcaseImg.hidden = true
-            }
         }
         
         DataService.ds.REF_COMMENTS.childByAppendingPath(currentPostKey).observeEventType(.Value, withBlock: { snapshot in
