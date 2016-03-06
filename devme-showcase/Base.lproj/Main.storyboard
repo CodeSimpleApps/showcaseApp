@@ -78,7 +78,7 @@
                                         </constraints>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apJ-MX-dD8" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
                                         <rect key="frame" x="20" y="83" width="520" height="35"/>
@@ -548,24 +548,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7J4-wh-vT1" customClass="MaterialView" customModule="devme_showcase" customModuleProvider="target">
-                                <rect key="frame" x="20" y="72" width="560" height="133"/>
+                                <rect key="frame" x="20" y="126" width="560" height="79"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRl-4h-RfB">
-                                        <rect key="frame" x="8" y="62" width="544" height="63"/>
-                                        <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="16"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KLN-Ih-EsY">
+                                        <rect key="frame" x="8" y="8" width="544" height="63"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip </string>
+                                        <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="133" id="FxQ-TL-UzH"/>
+                                    <constraint firstItem="KLN-Ih-EsY" firstAttribute="top" secondItem="7J4-wh-vT1" secondAttribute="top" constant="8" id="0ft-6O-vTq"/>
+                                    <constraint firstAttribute="trailing" secondItem="KLN-Ih-EsY" secondAttribute="trailing" constant="8" id="52r-zC-ldO"/>
+                                    <constraint firstAttribute="height" constant="79" id="FxQ-TL-UzH"/>
+                                    <constraint firstItem="KLN-Ih-EsY" firstAttribute="leading" secondItem="7J4-wh-vT1" secondAttribute="leading" constant="8" id="cgW-U1-SSk"/>
+                                    <constraint firstAttribute="bottom" secondItem="KLN-Ih-EsY" secondAttribute="bottom" constant="8" id="utI-IV-Rdm"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAS-Um-cqk" customClass="MaterialView" customModule="devme_showcase" customModuleProvider="target">
                                 <rect key="frame" x="20" y="72" width="560" height="46"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Talk about your app" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Mq-b6-ocS" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Talk about your post" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Mq-b6-ocS" customClass="MaterialTextField" customModule="devme_showcase" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="444" height="30"/>
                                         <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -724,10 +729,10 @@
                             <constraint firstItem="7J4-wh-vT1" firstAttribute="leading" secondItem="XRn-te-nRo" secondAttribute="leadingMargin" id="MGn-fd-9at"/>
                             <constraint firstItem="rdt-he-XtS" firstAttribute="top" secondItem="lgX-7s-7BF" secondAttribute="bottom" id="V8o-38-rT2"/>
                             <constraint firstItem="WAS-Um-cqk" firstAttribute="trailing" secondItem="XRn-te-nRo" secondAttribute="trailingMargin" id="ZTZ-v5-rU0"/>
-                            <constraint firstItem="7J4-wh-vT1" firstAttribute="top" secondItem="IuS-4n-sYJ" secondAttribute="bottom" constant="8" id="aBj-hw-wSN"/>
                             <constraint firstItem="rdt-he-XtS" firstAttribute="trailing" secondItem="XRn-te-nRo" secondAttribute="trailingMargin" id="dV2-Xn-WOk"/>
                             <constraint firstItem="b6Q-5c-HXZ" firstAttribute="top" secondItem="rdt-he-XtS" secondAttribute="bottom" constant="8" id="ht4-Dg-ajc"/>
                             <constraint firstItem="lgX-7s-7BF" firstAttribute="top" secondItem="7J4-wh-vT1" secondAttribute="bottom" constant="8" id="ju4-c4-did"/>
+                            <constraint firstItem="7J4-wh-vT1" firstAttribute="top" secondItem="WAS-Um-cqk" secondAttribute="bottom" constant="8" id="mc3-Fh-Hl7"/>
                             <constraint firstItem="rdt-he-XtS" firstAttribute="leading" secondItem="XRn-te-nRo" secondAttribute="leadingMargin" id="myG-wW-8nA"/>
                             <constraint firstItem="WAS-Um-cqk" firstAttribute="top" secondItem="IuS-4n-sYJ" secondAttribute="bottom" constant="8" id="njX-T4-Po4"/>
                             <constraint firstItem="7J4-wh-vT1" firstAttribute="trailing" secondItem="XRn-te-nRo" secondAttribute="trailingMargin" id="vDR-ta-wLg"/>
@@ -737,7 +742,7 @@
                     <connections>
                         <outlet property="bottomConstraint" destination="ht4-Dg-ajc" id="OaY-Jx-GFo"/>
                         <outlet property="commentTextField" destination="p63-5d-3e2" id="ApB-l9-px6"/>
-                        <outlet property="detailShowcaseLbl" destination="PRl-4h-RfB" id="knp-To-Tn3"/>
+                        <outlet property="detailShowcaseTextView" destination="KLN-Ih-EsY" id="n2R-FW-dhM"/>
                         <outlet property="detailTextField" destination="8Mq-b6-ocS" id="nT9-nd-M2H"/>
                         <outlet property="detailView" destination="7J4-wh-vT1" id="tXc-xM-BBo"/>
                         <outlet property="editBtn" destination="8oj-V3-lDP" id="RY4-z3-Vjz"/>

@@ -12,7 +12,7 @@ import Firebase
 
 class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var detailShowcaseLbl: UILabel!
+    @IBOutlet weak var detailShowcaseTextView: UITextView!
     @IBOutlet weak var detailView: MaterialView!
     @IBOutlet weak var detailTextField: MaterialTextField!
     @IBOutlet weak var imgSelector: UIImageView!
@@ -39,9 +39,11 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         tableView.dataSource = self
         tableView.delegate = self
-
+        
+        self.automaticallyAdjustsScrollViewInsets = false
+        
         if let post = post {
-            detailShowcaseLbl.text = post.postDescription
+            detailShowcaseTextView.text = post.postDescription
             currentPostKey = post.postKey
             
             print("CURRENT POST KEY IS \(currentPostKey)")
@@ -75,16 +77,15 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
                     self.currentUser = currentUser!
                     
                     if currentUser != post.userName {
-                        self.editFieldView.hidden = true
-                        self.detailTextField.hidden = true
+                        self.detailTextField.enabled = false
                         self.imgSelector.hidden = true
-                        self.editBtn.hidden = true
+                        self.editBtn.enabled = false
+                        self.editBtn.backgroundColor = UIColor.lightGrayColor()
                         
                     } else if currentUser == post.userName {
-                        self.editFieldView.hidden = false
-                        self.detailTextField.hidden = false
+                        self.detailTextField.enabled = true
                         self.imgSelector.hidden = false
-                        self.editBtn.hidden = false
+                        self.editBtn.enabled = true
                     }
                 })
                 
@@ -157,7 +158,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         if let post = post {
             if let txt = detailTextField.text where txt != "" {
                 post.editPost("description", txt: txt)
-                detailShowcaseLbl.text = txt
+                detailShowcaseTextView.text = txt
                 detailTextField.text = ""
             }
             
