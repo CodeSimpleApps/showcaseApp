@@ -216,7 +216,7 @@ class DetailVC: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         if let txt = commentTextField.text where txt != "" {
             
-            var comment: Dictionary <String, AnyObject> = [
+            let comment: Dictionary <String, AnyObject> = [
                 "username": currentUser,
                 "text": commentTextField.text!
             ]

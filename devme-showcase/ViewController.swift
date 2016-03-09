@@ -26,7 +26,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var accountExist: MaterialButton!
 
     var imagePicker: UIImagePickerController!
-    
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var imageSelected = false
     
     override func viewDidLoad() {
