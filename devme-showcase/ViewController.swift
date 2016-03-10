@@ -111,6 +111,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBAction func accountExistBtnPressed(sender: AnyObject) {
         prepareForLogin()
+        userImg.image = UIImage(named: "camera")
     }
     
     func prepareForLogin() {
@@ -198,6 +199,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                                         self.emailField.text = ""
                                                         self.passwordField.text = ""
                                                         self.nickNameField.text = ""
+                                                        self.userImg.image = UIImage(named: "camera")
                                                         
                                                         self.prepareForLogin()
                                                     }
