@@ -76,8 +76,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                                     print("result \(result)")
                                     
                                     let name = result["name"] as? String
+                                    let id = result["id"] as! String
+                                    let userImage = "https://graph.facebook.com/\(id)/picture?type=large"
                                     
-                                    let user = ["provider": authData.provider!, "username": name!]
+                                    let user = ["provider": authData.provider!, "username": name!, "userimage": userImage]
                                     DataService.ds.createFirebaseUser(authData.uid, user: user)
                                     
                                     NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)

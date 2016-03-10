@@ -89,17 +89,17 @@ class PostCell: UITableViewCell {
                 self.profileImg.image = profImg
                 
             } else {
-                request = Alamofire.request(.GET, post.userImgUrl!).validate(contentType: ["userimage/*"]).response(completionHandler: { request, response, data, err in
+                request = Alamofire.request(.GET, post.userImgUrl!).validate().response(completionHandler: { request, response, data, err in
                     
                     let imgP = UIImage(data: data!)
                     
-                    if imgP != nil {
-                        self.profileImg.image = imgP
-                        FeedVC.imageCache.setObject(imgP!, forKey: self.post.userImgUrl!)
-                    
-                    } else {
+                    guard imgP != nil else {
                         self.profileImg.image = UIImage(named: "camera")
+                        return
                     }
+                    
+                    self.profileImg.image = imgP
+                    FeedVC.imageCache.setObject(imgP!, forKey: self.post.userImgUrl!)
                 })
             }
             
