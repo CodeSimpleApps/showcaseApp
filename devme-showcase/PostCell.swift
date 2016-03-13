@@ -39,7 +39,6 @@ class PostCell: UITableViewCell {
     override func drawRect(rect: CGRect) {
         profileImg.layer.cornerRadius = profileImg.frame.size.width / 2
         profileImg.clipsToBounds = true
-        
         showcaseImg.clipsToBounds = true
     }
 
@@ -70,18 +69,22 @@ class PostCell: UITableViewCell {
                 self.showcaseImg.image = img
             
             } else {
-                request = Alamofire.request(.GET, post.imageUrl!).validate(contentType: ["image/*"]).response(completionHandler: { request, response, data, err in
+                request = Alamofire.request(.GET, post.imageUrl!).validate().response(completionHandler: { request, response, data, err in
                     
-                    if err == nil {
-                        let img = UIImage(data: data!)!
-                        self.showcaseImg.image = img
-                        FeedVC.imageCache.setObject(img, forKey: self.post.imageUrl!)
-                        
-                    } else {
+                    let img = UIImage(data: data!)
+                    
+                    guard img != nil else {
                         self.showcaseImg.image = UIImage(named: "camera")
+                        return
                     }
+                    
+                    self.showcaseImg.image = img
+                    FeedVC.imageCache.setObject(img!, forKey: self.post.imageUrl!)
                 })
             }
+        
+        } else {
+            self.showcaseImg.hidden = true
         }
         
         if post.userImgUrl != nil {

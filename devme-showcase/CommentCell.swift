@@ -32,7 +32,7 @@ class CommentCell: UITableViewCell {
         if comment.commentUserName != currentUserName {
             self.deleteCommentBtn.hidden = true
             
-        }else if comment.commentUserName == currentUserName {
+        } else if comment.commentUserName == currentUserName {
             self.deleteCommentBtn.hidden = false
         }
     }

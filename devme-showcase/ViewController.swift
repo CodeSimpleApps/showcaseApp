@@ -55,47 +55,47 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         facebookLogin.logInWithReadPermissions(["email"], fromViewController: self) { (facebookResult: FBSDKLoginManagerLoginResult!, facebookError: NSError!) -> Void in
             
-            if facebookError != nil {
+            guard facebookError == nil else {
                 print("Facebook login failed! Error \(facebookError)")
-                
-            } else {
-                if let accessToken = FBSDKAccessToken.currentAccessToken().tokenString {
-                
-                    print("successfully logged in with facebook. \(accessToken)")
-                    
-                    DataService.ds.REF_BASE.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { error, authData in
-                        if error != nil {
-                            print("Login failed. \(error)")
-                            
-                        } else {
-                            print("Logged in! \(authData)")
-                            
-                            let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email, name"], tokenString: accessToken, version: nil, HTTPMethod: "GET")
-                            req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
-                                if error == nil {
-                                    print("result \(result)")
-                                    
-                                    let name = result["name"] as? String
-                                    let id = result["id"] as! String
-                                    let userImage = "https://graph.facebook.com/\(id)/picture?type=large"
-                                    
-                                    let user = ["provider": authData.provider!, "username": name!, "userimage": userImage]
-                                    DataService.ds.createFirebaseUser(authData.uid, user: user)
-                                    
-                                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
-                                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
-                                    
-                                } else {
-                                    print("error \(error)")
-                                }
-                            })
-                        }
-                    })
-                    
-                } else {
-                    print("some err")
-                }
+                return
             }
+            
+            guard let accessToken = FBSDKAccessToken.currentAccessToken().tokenString else {
+                print("some err")
+                return
+            }
+            
+            print("successfully logged in with facebook. \(accessToken)")
+            
+            DataService.ds.REF_BASE.authWithOAuthProvider("facebook", token: accessToken, withCompletionBlock: { error, authData in
+                guard error == nil else {
+                    print("Login failed. \(error)")
+                    return
+                }
+                
+                print("Logged in! \(authData)")
+                
+                let req = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email, name"], tokenString: accessToken, version: nil, HTTPMethod: "GET")
+                req.startWithCompletionHandler({ (connection, result, error : NSError!) -> Void in
+                    
+                    guard error == nil else {
+                        print("error \(error)")
+                        return
+                    }
+                    
+                    print("result \(result)")
+                    
+                    let name = result["name"] as? String
+                    let id = result["id"] as! String
+                    let userImage = "https://graph.facebook.com/\(id)/picture?type=large"
+                    
+                    let user = ["provider": authData.provider!, "username": name!, "userimage": userImage]
+                    DataService.ds.createFirebaseUser(authData.uid, user: user)
+                    
+                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
+                    self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
+                })
+            })
         }
     }
     

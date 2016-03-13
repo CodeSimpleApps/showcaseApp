@@ -322,57 +322,60 @@
                                                             <color key="textColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1440" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIv-0Z-3Bo">
-                                                            <rect key="frame" x="501" y="8" width="51" height="22"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="51" id="fPq-hY-Zub"/>
-                                                                <constraint firstAttribute="height" constant="22" id="wvH-NL-bzk"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
-                                                            <color key="textColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMh-4c-PzO">
-                                                            <rect key="frame" x="501" y="30" width="51" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="21" id="ZvF-I0-vSo"/>
-                                                                <constraint firstAttribute="width" constant="51" id="kzX-vQ-ERI"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="17"/>
-                                                            <color key="textColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QS6-x2-x6R">
-                                                            <rect key="frame" x="8" y="66" width="544" height="69"/>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="69" id="BHB-ka-Y87"/>
-                                                                <constraint firstAttribute="height" constant="58" id="ohn-OO-TWO"/>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="sti-wP-RuR"/>
-                                                            </constraints>
-                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="16"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                            <variation key="default">
-                                                                <mask key="constraints">
-                                                                    <exclude reference="ohn-OO-TWO"/>
-                                                                    <exclude reference="sti-wP-RuR"/>
-                                                                </mask>
-                                                            </variation>
-                                                        </textView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="r4a-dM-2gI">
-                                                            <rect key="frame" x="8" y="143" width="544" height="211"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="211" id="ken-o0-QxF"/>
-                                                            </constraints>
-                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="53q-qM-B4s">
+                                                            <rect key="frame" x="465" y="8" width="87" height="42"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="zMe-cF-OKj">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="42"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="42" id="LTV-Fx-fAY"/>
+                                                                        <constraint firstAttribute="height" constant="42" id="PKy-3u-Xqp"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ptH-0V-q4R">
+                                                                    <rect key="frame" x="42" y="0.0" width="45" height="42"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1440" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIv-0Z-3Bo">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="45" height="22"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="45" id="Qq3-Ai-ti2"/>
+                                                                                <constraint firstAttribute="height" constant="22" id="yQo-b0-FPD"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="CaviarDreams-Bold" family="Caviar Dreams" pointSize="17"/>
+                                                                            <color key="textColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                            <variation key="default">
+                                                                                <mask key="constraints">
+                                                                                    <exclude reference="Qq3-Ai-ti2"/>
+                                                                                    <exclude reference="yQo-b0-FPD"/>
+                                                                                </mask>
+                                                                            </variation>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMh-4c-PzO">
+                                                                            <rect key="frame" x="0.0" y="22" width="45" height="20"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="20" id="A96-aW-wtX"/>
+                                                                                <constraint firstAttribute="width" constant="45" id="kRJ-U3-ATs"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="17"/>
+                                                                            <color key="textColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                            <variation key="default">
+                                                                                <mask key="constraints">
+                                                                                    <exclude reference="A96-aW-wtX"/>
+                                                                                    <exclude reference="kRJ-U3-ATs"/>
+                                                                                </mask>
+                                                                            </variation>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                        </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2D9-7f-JM0" customClass="MaterialButton" customModule="devme_showcase" customModuleProvider="target">
-                                                            <rect key="frame" x="489" y="351" width="63" height="33"/>
+                                                            <rect key="frame" x="497" y="363" width="63" height="21"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="33" id="eED-zq-XpA"/>
-                                                                <constraint firstAttribute="width" constant="63" id="gPJ-40-Zad"/>
+                                                                <constraint firstAttribute="height" constant="21" id="GDd-AA-IgP"/>
+                                                                <constraint firstAttribute="width" constant="63" id="mdQ-oC-kQM"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="15"/>
                                                             <state key="normal" title="Delete">
@@ -382,39 +385,56 @@
                                                                 <action selector="deletePost:" destination="1DV-5n-YWj" eventType="touchUpInside" id="MWK-Eq-1kb"/>
                                                             </connections>
                                                         </button>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart-empty" translatesAutoresizingMaskIntoConstraints="NO" id="zMe-cF-OKj">
-                                                            <rect key="frame" x="463" y="18" width="30" height="30"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="Viw-H8-eBq"/>
-                                                                <constraint firstAttribute="height" constant="30" id="Ztb-Xo-weQ"/>
-                                                            </constraints>
-                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EOv-p0-fHA">
+                                                            <rect key="frame" x="8" y="58" width="544" height="290"/>
+                                                            <subviews>
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QS6-x2-x6R">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="544" height="50"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="50" id="NMb-rZ-R3p"/>
+                                                                        <constraint firstAttribute="height" constant="58" id="ohn-OO-TWO"/>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="sti-wP-RuR"/>
+                                                                    </constraints>
+                                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <fontDescription key="fontDescription" name="CaviarDreams" family="Caviar Dreams" pointSize="16"/>
+                                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                                                    <variation key="default">
+                                                                        <mask key="constraints">
+                                                                            <exclude reference="ohn-OO-TWO"/>
+                                                                            <exclude reference="sti-wP-RuR"/>
+                                                                        </mask>
+                                                                    </variation>
+                                                                </textView>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="r4a-dM-2gI">
+                                                                    <rect key="frame" x="0.0" y="50" width="544" height="240"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="240" id="pPJ-Mf-dik"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="ZfX-wt-pbo" firstAttribute="leading" secondItem="NG7-Rv-Eqq" secondAttribute="trailing" constant="6" id="0n1-fa-aAN"/>
-                                                        <constraint firstAttribute="trailing" secondItem="2D9-7f-JM0" secondAttribute="trailing" constant="8" id="52g-YM-1qE"/>
-                                                        <constraint firstAttribute="trailing" secondItem="cIv-0Z-3Bo" secondAttribute="trailing" constant="8" id="5Zb-BN-zBf"/>
                                                         <constraint firstItem="NG7-Rv-Eqq" firstAttribute="leading" secondItem="4Vk-gj-w0i" secondAttribute="leading" constant="8" id="CYb-qa-Kdn"/>
-                                                        <constraint firstItem="QS6-x2-x6R" firstAttribute="leading" secondItem="4Vk-gj-w0i" secondAttribute="leading" constant="8" id="Eoa-cN-5xh"/>
-                                                        <constraint firstItem="cIv-0Z-3Bo" firstAttribute="top" secondItem="4Vk-gj-w0i" secondAttribute="top" constant="8" id="F0l-H2-X9m"/>
-                                                        <constraint firstAttribute="trailing" secondItem="r4a-dM-2gI" secondAttribute="trailing" constant="8" id="GPw-we-cvS"/>
-                                                        <constraint firstItem="sMh-4c-PzO" firstAttribute="top" secondItem="cIv-0Z-3Bo" secondAttribute="bottom" id="JgL-06-5U9"/>
-                                                        <constraint firstItem="r4a-dM-2gI" firstAttribute="top" secondItem="QS6-x2-x6R" secondAttribute="bottom" constant="8" id="RSG-wR-49x"/>
                                                         <constraint firstItem="NG7-Rv-Eqq" firstAttribute="top" secondItem="4Vk-gj-w0i" secondAttribute="top" constant="8" id="Tv5-xy-0jN"/>
-                                                        <constraint firstItem="zMe-cF-OKj" firstAttribute="top" secondItem="4Vk-gj-w0i" secondAttribute="top" constant="18" id="XcA-PI-HFo"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2D9-7f-JM0" secondAttribute="bottom" id="UYN-yb-qv8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2D9-7f-JM0" secondAttribute="bottom" id="WQm-Cc-lYa"/>
+                                                        <constraint firstItem="53q-qM-B4s" firstAttribute="top" secondItem="4Vk-gj-w0i" secondAttribute="top" constant="8" id="X8X-4f-Sz7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="53q-qM-B4s" secondAttribute="trailing" constant="8" id="Yu8-nc-ta3"/>
                                                         <constraint firstItem="ZfX-wt-pbo" firstAttribute="top" secondItem="4Vk-gj-w0i" secondAttribute="top" constant="8" id="Z2M-Sn-CmL"/>
-                                                        <constraint firstAttribute="trailing" secondItem="sMh-4c-PzO" secondAttribute="trailing" constant="8" id="b1x-Wd-zYe"/>
-                                                        <constraint firstItem="sMh-4c-PzO" firstAttribute="leading" secondItem="zMe-cF-OKj" secondAttribute="trailing" constant="167" id="dab-QS-iV7"/>
-                                                        <constraint firstItem="QS6-x2-x6R" firstAttribute="top" secondItem="ZfX-wt-pbo" secondAttribute="bottom" constant="8" id="hLl-qU-qrm"/>
-                                                        <constraint firstItem="sMh-4c-PzO" firstAttribute="leading" secondItem="zMe-cF-OKj" secondAttribute="trailing" constant="8" id="mVo-bz-eld"/>
-                                                        <constraint firstAttribute="bottom" secondItem="2D9-7f-JM0" secondAttribute="bottom" id="mqq-sk-nKe"/>
-                                                        <constraint firstAttribute="trailing" secondItem="QS6-x2-x6R" secondAttribute="trailing" constant="8" id="rT6-Vj-DHV"/>
-                                                        <constraint firstItem="r4a-dM-2gI" firstAttribute="leading" secondItem="4Vk-gj-w0i" secondAttribute="leading" constant="8" id="weH-9F-l3f"/>
+                                                        <constraint firstAttribute="trailing" secondItem="EOv-p0-fHA" secondAttribute="trailing" constant="8" id="ZV7-WA-4Fh"/>
+                                                        <constraint firstItem="EOv-p0-fHA" firstAttribute="leading" secondItem="4Vk-gj-w0i" secondAttribute="leading" constant="8" id="pL0-Wc-FJa"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2D9-7f-JM0" secondAttribute="trailing" id="xTo-Ux-Yqb"/>
+                                                        <constraint firstItem="EOv-p0-fHA" firstAttribute="top" secondItem="ZfX-wt-pbo" secondAttribute="bottom" id="zj8-lL-LZr"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="dab-QS-iV7"/>
+                                                            <exclude reference="UYN-yb-qv8"/>
                                                         </mask>
                                                     </variation>
                                                 </view>

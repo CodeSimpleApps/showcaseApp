@@ -31,8 +31,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        print("\(FeedVC.imageCache)")
-        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.estimatedRowHeight = 400
@@ -41,14 +39,12 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         imagePicker.delegate = self
         
         DataService.ds.REF_POSTS.observeEventType(.Value, withBlock: { snapshot in
-//            print(snapshot.value)
             
             self.posts = []
             
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 
                 for snap in snapshots {
-//                    print("SNAP: \(snap)")
                     
                     if let postDict = snap.value as? Dictionary <String, AnyObject> {
                         let key = snap.key
@@ -66,26 +62,19 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
             
             DataService.ds.REF_USER_CURRENT.observeEventType(.Value, withBlock: { snapshot in
                 let currentUser = snapshot.value.objectForKey("username") as? String
-
-//                print("CURRENT USER IN FEED VC: \(currentUser)")
                 self.currentUser = currentUser!
             })
+            
         } else {
             currentUser = "EMPTY"
         }
         
         DataService.ds.REF_USER_CURRENT.childByAppendingPath("userimage").observeSingleEventOfType(.Value, withBlock: { snapshot in
             
-//            print("THIS IS USER PICTURE \(snapshot.value)")
-            
             if let userImgUrl = snapshot.value as? String {
                 self.currentUserImgUrl = userImgUrl
             }
         })
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        tableView.reloadData()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -100,30 +89,26 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         
         let post = posts[indexPath.row]
                 
-        if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
-            
-            cell.request?.cancel()
-            
-            var img: UIImage?
-            var imgP: UIImage?
-            
-            if let url = post.imageUrl {
-                img = FeedVC.imageCache.objectForKey(url) as? UIImage
-//                print("IMG \(img)")
-            }
-            
-            if let profUrl = post.userImgUrl {
-                imgP = FeedVC.imageCache.objectForKey(profUrl) as? UIImage
-//                print("IMG P \(imgP)")
-            }
-            
-            cell.configCell(post, img: img, profImg: imgP)
-                        
-            return cell
-            
-        } else {
+        guard let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell else {
             return PostCell()
         }
+        
+        cell.request?.cancel()
+        
+        var img: UIImage?
+        var imgP: UIImage?
+        
+        if let url = post.imageUrl {
+            img = FeedVC.imageCache.objectForKey(url) as? UIImage
+        }
+        
+        if let profUrl = post.userImgUrl {
+            imgP = FeedVC.imageCache.objectForKey(profUrl) as? UIImage
+        }
+        
+        cell.configCell(post, img: img, profImg: imgP)
+        
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -134,12 +119,11 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         
         let post = posts[indexPath.row]
         
-        if post.imageUrl == nil {
-            return 150
-            
-        } else {
+        guard post.imageUrl == nil else {
             return tableView.estimatedRowHeight
         }
+        
+        return 150
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -183,7 +167,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
                                 if let info = response.result.value as? Dictionary <String, AnyObject> {
                                     if let links = info["links"] as? Dictionary <String, AnyObject> {
                                         if let imgLink = links["image_link"] as? String {
-//                                            print("LINK: \(imgLink)")
                                             
                                             self.postToFirebase(imgLink)
                                         }
@@ -214,7 +197,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         
         if imgUrl != nil {
             post["imageUrl"] = imgUrl!
-//            print(imgUrl)
         }
         
         DataService.ds.REF_POSTS.observeEventType(.ChildAdded, withBlock: { snapshot in
@@ -238,7 +220,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         userPostRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("posts").childByAppendingPath(postKey)
         
         userPostRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
-//            print("THIS IS SNAPSHOT VALUE IN CONFIGCELL: \(snapshot.value)")
             if let doesNotExist = snapshot.value as? NSNull {
                 self.userPostRef.setValue(true)
             }
