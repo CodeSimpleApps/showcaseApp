@@ -65,6 +65,8 @@ class PostCell: UITableViewCell {
         self.userNameLbl.text = post.userName
         
         if post.imageUrl != nil {
+            self.showcaseImg.hidden = false
+            
             if img != nil {
                 self.showcaseImg.image = img
             

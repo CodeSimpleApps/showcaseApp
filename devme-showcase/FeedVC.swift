@@ -87,13 +87,13 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let post = posts[indexPath.row]
-                
         guard let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell else {
             return PostCell()
         }
         
         cell.request?.cancel()
+        
+        let post = posts[indexPath.row]
         
         var img: UIImage?
         var imgP: UIImage?
@@ -117,7 +117,7 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        let post = posts[indexPath.row]
+        let post = self.posts[indexPath.row]
         
         guard post.imageUrl == nil else {
             return tableView.estimatedRowHeight
